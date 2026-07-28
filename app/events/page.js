@@ -2,7 +2,10 @@ import React from "react";
 import Header from "../components/header";
 import ImgLabel from "../components/imglabel";
 import ConnectCard from "../components/connectCard";
+import IconLabel from "../components/iconLabel";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import PlaceIcon from "@mui/icons-material/Place";
+import HowToRegIcon from "@mui/icons-material/HowToReg";
 
 function page() {
   return (
@@ -32,30 +35,49 @@ function page() {
         ></ImgLabel>
       </div>
 
-      <div className="flex flex-col gap-[24px] w-full">
-        <div className="flex flex-col gap-[8px]">
-          <h2>Upcoming Events</h2>
-          <h3 className="opacity-60">
-            Follow our Luma calendar to see what&apos;s coming up and get
-            notified when registration opens.
-          </h3>
+      <div className="flex flex-col lg:flex-row lg:items-start gap-[24px] lg:gap-[48px] w-full">
+        <div className="flex flex-col gap-[24px] w-full lg:flex-1">
+          <div className="flex flex-col gap-[16px]">
+            <h2>Upcoming Events</h2>
+            <h3 className="opacity-60">
+              From pitch competitions to workshops and networking nights, every
+              event we run lives on one calendar. Follow it to see what&apos;s
+              coming up and get notified when registration opens.
+            </h3>
+          </div>
+
+          <div className="flex flex-col md:flex-row lg:flex-col gap-[16px] md:gap-[24px] lg:gap-[16px]">
+            <IconLabel
+              icon={<PlaceIcon fontSize="large" className="text-primary-yellow" />}
+              header="On campus and downtown"
+              body="Events run across SFU Burnaby and Harbour Centre, so there's usually one close to wherever you study."
+            ></IconLabel>
+
+            <IconLabel
+              icon={
+                <HowToRegIcon fontSize="large" className="text-primary-yellow" />
+              }
+              header="Register on Luma"
+              body="Every event opens for registration on the calendar. Subscribe once and you'll hear about new events as we announce them."
+            ></IconLabel>
+          </div>
+
+          <ConnectCard
+            name="Luma"
+            cta="Events"
+            ctaLink="https://luma.com/enactussfu"
+            icon={<CalendarMonthIcon />}
+          ></ConnectCard>
         </div>
 
         <iframe
           src="https://luma.com/embed/calendar/cal-RsECMxK7cyQW34Y/events?lt=dark"
           title="Enactus SFU events calendar"
-          className="w-full h-[450px] rounded-[4px] border border-[#bfcbda88]"
+          className="w-full lg:w-[700px] lg:shrink-0 h-[560px] lg:h-[700px] rounded-[16px] border border-white/10"
           allowFullScreen
           aria-hidden="false"
           tabIndex={0}
         ></iframe>
-
-        <ConnectCard
-          name="Luma"
-          cta="Events"
-          ctaLink="https://luma.com/enactussfu"
-          icon={<CalendarMonthIcon />}
-        ></ConnectCard>
       </div>
     </div>
   );
