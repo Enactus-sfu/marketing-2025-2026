@@ -1,6 +1,8 @@
 import React from "react";
 import Header from "../components/header";
 import ImgLabel from "../components/imglabel";
+import ConnectCard from "../components/connectCard";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
 function page() {
   return (
@@ -28,6 +30,32 @@ function page() {
           // cta2="Register"
           img="/images/VentureConnect.jpg"
         ></ImgLabel>
+      </div>
+
+      <div className="flex flex-col gap-[24px] w-full">
+        <div className="flex flex-col gap-[8px]">
+          <h2>Upcoming Events</h2>
+          <h3 className="opacity-60">
+            Follow our Luma calendar to see what&apos;s coming up and get
+            notified when registration opens.
+          </h3>
+        </div>
+
+        <iframe
+          src="https://luma.com/embed/calendar/cal-RsECMxK7cyQW34Y/events?lt=dark"
+          title="Enactus SFU events calendar"
+          className="w-full h-[450px] rounded-[4px] border border-[#bfcbda88]"
+          allowFullScreen
+          aria-hidden="false"
+          tabIndex={0}
+        ></iframe>
+
+        <ConnectCard
+          name="Luma"
+          cta="Events"
+          ctaLink="https://luma.com/enactussfu"
+          icon={<CalendarMonthIcon />}
+        ></ConnectCard>
       </div>
     </div>
   );
