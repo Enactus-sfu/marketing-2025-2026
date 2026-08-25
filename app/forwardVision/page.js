@@ -12,7 +12,6 @@ import {
 } from "react-icons/md";
 import Button from "../components/button";
 import Table from "../components/table";
-import CheckLabel from "../components/checkLabel";
 
 const timelineColumns = ["Event", "Date & Time", "Location", "Details"];
 const timelineRows = [
@@ -80,37 +79,6 @@ const itineraryRows = [
     "20 minutes",
     "Group photo, raffle prizes drawn, thank yous to sponsors and collaborators, and winners announced.",
   ],
-];
-
-const speakerExpertise = [
-  {
-    header: "Urban Planning & Sustainable Cities",
-    body: "Designing the built environment for people and planet.",
-  },
-  {
-    header: "Environmental & Climate Research",
-    body: "Evidence and insight on emerging climate challenges.",
-  },
-  {
-    header: "Sustainable Business & Social Innovation",
-    body: "Building ventures where impact and viability meet.",
-  },
-  {
-    header: "Circular Economy",
-    body: "Rethinking production, consumption, and waste.",
-  },
-  {
-    header: "Public Policy & Sustainability",
-    body: "How policy shapes sustainable outcomes at scale.",
-  },
-  {
-    header: "Resource & Environmental Management",
-    body: "Stewarding natural resources responsibly.",
-  },
-  {
-    header: "Community Development",
-    body: "Grounding solutions in real community needs.",
-  },
 ];
 
 function page() {
@@ -222,32 +190,6 @@ function page() {
         </div>
 
         <Table columns={timelineColumns} rows={timelineRows} />
-      </section>
-
-      <section className="section-standard gap-[24px] md:gap-[48px]">
-        <div className="flex flex-col gap-[16px] md:gap-[24px]">
-          <div className="flex flex-col gap-[12px]">
-            <h5 className="text-primary-yellow"> The Impact Lab </h5>
-            <h1> Speakers Needed </h1>
-          </div>
-          <h3>
-            We are seeking established professionals, researchers, and thought
-            leaders to inspire participants through short talks and discussion
-            panels at our kickoff workshop — sharing insights on emerging
-            sustainability challenges, industry trends, and the importance of
-            evidence-based decision-making.
-          </h3>
-        </div>
-
-        <div className="flex flex-wrap gap-[16px] md:gap-[24px]">
-          {speakerExpertise.map((item) => (
-            <CheckLabel
-              key={item.header}
-              header={item.header}
-              body={item.body}
-            />
-          ))}
-        </div>
       </section>
 
       <section className="section-standard gap-[24px] md:gap-[48px]">
