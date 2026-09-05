@@ -4,6 +4,12 @@ import SponsorImgSmall from "../components/sponsorImgSmall.js";
 import SponsorBanner from "../components/sponsorBanner.js";
 import Button from "../components/button.js";
 
+export const metadata = {
+  title: "Sponsors & Partners",
+  description:
+    "Partner with Enactus SFU. Meet the sponsors backing our projects and find out how your organization can support student-led social enterprise.",
+};
+
 function page() {
   const partnerList = [
     {
@@ -153,15 +159,20 @@ function page() {
         <h1>Thank you to all our partners and sponsors!</h1>
 
         <div className="flex gap-[24px] mt-[24px]">
-          <Button size="large" variant="primary">
-            <a href="mailto:info@enactussfu.ca?subject=Hello%20Enactus%20SFU">
-              Become a Sponsor
-            </a>
+          <Button
+            size="large"
+            variant="primary"
+            cta="mailto:info@enactussfu.ca?subject=Hello%20Enactus%20SFU"
+          >
+            Become a Sponsor
           </Button>
-          <Button size="large" variant="primary">
-            <a target="_blank" href="https://drive.google.com/file/d/13Ty4E8oLsxcfAWbw0wiKss8pVkTjZwdl/view?usp=drive_link">
-              Sponsorship Package
-            </a>
+          <Button
+            size="large"
+            variant="primary"
+            target="_blank"
+            cta="https://drive.google.com/file/d/13Ty4E8oLsxcfAWbw0wiKss8pVkTjZwdl/view?usp=drive_link"
+          >
+            Sponsorship Package
           </Button>
         </div>
       </div>
@@ -224,7 +235,7 @@ function page() {
           size="large"
           variant="primary"
           className="my-[32px]"
-          cta="mailto:info@enactus.com"
+          cta="mailto:info@enactussfu.ca?subject=Partnership%20Enquiry"
         >
           Get In Contact With Us
         </Button>

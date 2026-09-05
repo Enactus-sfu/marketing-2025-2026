@@ -36,8 +36,8 @@ function Navbar() {
                             <Image
                                 src="/images/Logo.svg"
                                 alt="Enactus SFU Logo"
-                                width={20}
-                                height={20}
+                                width={62}
+                                height={64}
                                 className="h-[20px] w-auto"
                             />
                         </Link>
@@ -53,16 +53,17 @@ function Navbar() {
                             {navItems.map((item) => {
                                 const isActive = pathname === item.link;
                                 return (
-                                    <button
+                                    <Link
                                         key={item.label}
-                                        className={` leading-none transition-all ${isActive
-                                            ? "text-[#ED8B6E] font-semibold"
+                                        href={item.link}
+                                        aria-current={isActive ? "page" : undefined}
+                                        className={`leading-none transition-all text-[0.83rem] font-bold ${isActive
+                                            ? "text-[#ED8B6E]"
                                             : "text-white opacity-60 hover:opacity-100"
                                             }`}
-                                        onClick={() => console.log("close nav")}
                                     >
-                                        <a href={item.link}> <h5>{item.label}</h5> </a>
-                                    </button>
+                                        {item.label}
+                                    </Link>
                                 );
                             })}
                         </nav>

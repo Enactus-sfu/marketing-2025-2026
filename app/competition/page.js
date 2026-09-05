@@ -8,29 +8,13 @@ import YearLabel from "../components/yearLabel";
 function page() {
   const achievements = [
     {
-      header: "2025–2026",
-      subheader1: "Regionals",
-      body1:
-        "1st Place (Entrepreneurship), 1st Place (Community Empowerment), 2nd Place (Environmental Sustainability), 2nd Place (Innovation & Impact)",
-      subheader2: "",
-      body2: "",
-    },
-    {
-      header: "2024–2025",
-      subheader1: "Nationals",
-      body1: "Semi-finalist (top 20 out of 80+ schools in Canada)",
-      subheader2: "Regionals",
-      body2:
-        "1st Place (Entrepreneurship), 2nd Place (Youth Empowerment), 2nd Place (Environmental Sustainability), 3rd Place (Innovation and Impact)",
-    },
-    {
       header: "2023–2024",
       subheader1: "Nationals",
       body1:
-        "Semifinalist (top 20 out of 80+ schools in Canada), 2nd Place (Innovation and Impact)",
+        "Semifinalist (top 20 out of 80+ schools in Canada), 2nd Place (Innovation & Impact)",
       subheader2: "Regionals",
       body2:
-        "1st Place (Innovation and Impact), 2nd Place (Environmental Sustainability), 2nd Place (Entrepreneurship)",
+        "1st Place (Innovation & Impact), 2nd Place (Environmental Sustainability), 2nd Place (Entrepreneurship)",
     },
     {
       header: "2022–2023",
@@ -83,9 +67,10 @@ function page() {
           <div className="flex flex-col gap-[12px] mb-[24px] md:mb-[48px]">
             <h3>
               {" "}
-              This year, Simon Fraser University had their top performance in
-              the last couple of years, placing in all four categories and
-              winning 1st in TD Entrepreneurship.{" "}
+              At the 2026 Regional Exposition, Simon Fraser University placed in
+              all four categories and won 1st in both the TD Entrepreneurship
+              and Community Empowerment Challenges — our strongest result in
+              years.{" "}
             </h3>
 
             <h5 className="text-primary-yellow"> Awards </h5>
@@ -110,9 +95,8 @@ function page() {
           </div>
           <h3>
             {" "}
-            This year, Simon Fraser University placed in all four categories,
-            winning 1st in both the Entrepreneurship and Community Empowerment
-            Challenges.
+            Simon Fraser University placed in all four categories, winning 1st
+            in both the Entrepreneurship and Community Empowerment Challenges.
           </h3>
         </div>
 
@@ -121,18 +105,17 @@ function page() {
             <div className="flex flex-col gap-[32px] w-[100%]">
               <Image
                 src="/images/entre-new.jpg"
-                alt="Entrepreneurship Challenge"
+                alt="The Entrepreneurship Challenge team with their 2026 regional first-place award"
                 width={1920}
                 height={1080}
                 className="w-[100%] h-auto"
-                priority
               />
               <h2 className="text-primary-red">
                 {" "}
                 1st Place — Entrepreneurship Challenge{" "}
               </h2>
               <div className="flex flex-col gap-[2px]">
-                <h3>Presenters: Ak, Francesca</h3>
+                <h3>Presenters: Akshaj Shrestha, Francesca Yalung</h3>
                 <h3>Designer: Neal Sison</h3>
                 <h3>Coaches: Brandon Xu, David Guo, Eva Yueng</h3>
               </div>
@@ -140,18 +123,17 @@ function page() {
             <div className="flex flex-col gap-[32px] w-[100%]">
               <Image
                 src="/images/ce-new.jpg"
-                alt="Community Empowerment Challenge"
+                alt="The Community Empowerment Challenge team with their 2026 regional first-place award"
                 width={1920}
                 height={1080}
                 className="w-[100%] h-auto"
-                priority
               />
               <h2 className="text-primary-red">
                 {" "}
                 1st Place — Community Empowerment Challenge{" "}
               </h2>
               <div className="flex flex-col gap-[2px]">
-                <h3>Presenters: Patty R., Liam Santos</h3>
+                <h3>Presenters: Patty Rattanaleelart, Liam Santos</h3>
                 <h3>Designer: Ellie Kim</h3>
                 <h3>Coaches: Wayne Yan Muk, Rachel Vicencio</h3>
               </div>
@@ -162,11 +144,10 @@ function page() {
             <div className="flex flex-col gap-[32px] w-[100%]">
               <Image
                 src="/images/env-new.jpg"
-                alt="Environmental Sustainability Challenge"
+                alt="The Environmental Sustainability team with their 2026 regional second-place award"
                 width={1920}
                 height={1080}
                 className="w-[100%] h-auto"
-                priority
               />
               <h2 className="text-primary-red">
                 {" "}
@@ -181,11 +162,10 @@ function page() {
             <div className="flex flex-col gap-[32px] w-[100%]">
               <Image
                 src="/images/inno-new.jpg"
-                alt="Innovation & Impact Challenge"
+                alt="The Innovation & Impact team with their 2026 regional second-place award"
                 width={1920}
                 height={1080}
                 className="w-[100%] h-auto"
-                priority
               />
               <h2 className="text-primary-red">
                 {" "}
@@ -194,7 +174,7 @@ function page() {
               <div className="flex flex-col gap-[2px]">
                 <h3>Presenters: Joaquin Ofreneo, Michelle So</h3>
                 <h3>Designer: Michelle Lee</h3>
-                <h3>Coaches: Daniel Furlot, Tim MacDougal</h3>
+                <h3>Coaches: Daniel Furlot, Tim MacDougall</h3>
               </div>
             </div>
           </div>
@@ -209,27 +189,25 @@ function page() {
           </div>
           <h3>
             {" "}
-            This year, Simon Fraser University placed semi-finals, earning Top
-            20 out of 80+ schools in Canada.{" "}
+            Simon Fraser University reached the semi-finals, earning a Top 20
+            finish out of 80+ schools in Canada.{" "}
           </h3>
         </div>
 
         <div className="flex lg:flex-row flex-col w-[100%] gap-[16px]">
           <Image
             src="/images/nat1.jpg"
-            alt="Hero Image"
+            alt="The Enactus SFU team at the 2025 Enactus Canada National Exposition"
             width={1920}
             height={1080}
             className="w-[100%] lg:w-[50%] h-auto"
-            priority
           />
           <Image
             src="/images/nat3.jpg"
-            alt="Hero Image"
+            alt="Enactus SFU semi-finalists on stage at the 2025 National Exposition"
             width={1920}
             height={1080}
             className="w-[100%] lg:w-[50%] h-auto"
-            priority
           />
         </div>
 
@@ -254,9 +232,8 @@ function page() {
           </div>
           <h3>
             {" "}
-            This year, Simon Fraser University had their top performance in the
-            last couple of years, placing in all four categories and winning 1st
-            in Desjardins Youth Empowerment Challenge.
+            Simon Fraser University placed in all four categories, winning 1st
+            in the TD Entrepreneurship Challenge.
           </h3>
         </div>
 
@@ -266,15 +243,14 @@ function page() {
             <div className="flex flex-col gap-[32px] w-[100%]">
               <Image
                 src="/images/entre.jpg"
-                alt="Hero Image"
+                alt="The Entrepreneurship Challenge team with their 2025 regional first-place award"
                 width={1920}
                 height={1080}
                 className="w-[100%] h-auto"
-                priority
               />
               <h2 className="text-primary-red">
                 {" "}
-                1st Place - Entrepreneurship Challenge{" "}
+                1st Place — Entrepreneurship Challenge{" "}
               </h2>
               <div className="flex flex-col gap-[2px]">
                 <h3>Presenters: Naia Wong, Wilson Liang, Nico Tan</h3>
@@ -286,15 +262,14 @@ function page() {
             <div className="flex flex-col gap-[32px] w-[100%]">
               <Image
                 src="/images/ye1.jpg"
-                alt="Hero Image"
+                alt="The Youth Empowerment Challenge team with their 2025 regional second-place award"
                 width={1920}
                 height={1080}
                 className="w-[100%] h-auto"
-                priority
               />
               <h2 className="text-primary-red">
                 {" "}
-                2nd Place - Youth Empowerment Challenge{" "}
+                2nd Place — Youth Empowerment Challenge{" "}
               </h2>
               <div className="flex flex-col gap-[2px]">
                 <h3>Presenters: Marianne Li, Olivia Cheng</h3>
@@ -308,15 +283,14 @@ function page() {
             <div className="flex flex-col gap-[32px] w-[100%]">
               <Image
                 src="/images/inno.jpg"
-                alt="Hero Image"
+                alt="The Innovation & Impact team with their 2025 regional third-place certificate"
                 width={1920}
                 height={1080}
                 className="w-[100%] h-auto"
-                priority
               />
               <h2 className="text-primary-red">
                 {" "}
-                3rd Place - Innovation and Impact{" "}
+                3rd Place — Innovation & Impact{" "}
               </h2>
               <div className="flex flex-col gap-[2px]">
                 <h3>Presenters: Siya Madaan, Anthony Perera</h3>
@@ -327,15 +301,14 @@ function page() {
             <div className="flex flex-col gap-[32px] w-[100%]">
               <Image
                 src="/images/env.jpg"
-                alt="Hero Image"
+                alt="The Environmental Sustainability team with their 2025 regional second-place award"
                 width={1920}
                 height={1080}
                 className="w-[100%] h-auto"
-                priority
               />
               <h2 className="text-primary-red">
                 {" "}
-                2nd Place - Environmental Sustainability{" "}
+                2nd Place — Environmental Sustainability{" "}
               </h2>
               <div className="flex flex-col gap-[2px]">
                 <h3>Presenters: Amber Holliday, Vanessa Kam</h3>

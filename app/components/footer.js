@@ -4,20 +4,23 @@ import React from 'react'
 import Icon from '@mdi/react'
 import { mdiInstagram, mdiLinkedin, mdiEmailOutline } from '@mdi/js'
 import Button from "../components/button"
+import Link from 'next/link'
 import { DM_Sans } from 'next/font/google'
 import Image from 'next/image'
 
 const dmSans = DM_Sans({ subsets: ['latin'], variable: '--font-dm-sans' })
+
+const CONTACT_EMAIL = 'info@enactussfu.ca'
 
 function Footer() {
     const currentYear = new Date().getFullYear()
 
     const handleCopyEmail = async () => {
         try {
-            await navigator.clipboard.writeText('email placeholder')
-            window.alert('copied to clipboard')
+            await navigator.clipboard.writeText(CONTACT_EMAIL)
+            window.alert(`Copied ${CONTACT_EMAIL} to clipboard`)
         } catch (err) {
-            window.alert('failed to copy')
+            window.alert('Failed to copy')
         }
     }
 
@@ -33,7 +36,7 @@ function Footer() {
                             <Image
                                 src="/images/Logo.svg"
                                 alt="Enactus SFU Logo"
-                                width={200}
+                                width={62}
                                 height={64}
                                 className="w-[4vw] h-auto"
                             />
@@ -50,19 +53,19 @@ function Footer() {
                         <div className=' flex-1 flex flex-col w-full h-full justify-end lg:mt-[0] md:mt-[0] mt-[64px] '>
                             <div className="flex items-center gap-6  py-[16px] ">
                                 {/* Instagram */}
-                                <a href="https://www.instagram.com/enactussfu/" aria-label="Instagram" target="_blank" className="group">
+                                <a href="https://www.instagram.com/enactussfu/" aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="group">
                                     <div className="grid h-[40px] w-[40px] place-items-center rounded-full bg-[#262626]">
                                         <Icon path={mdiInstagram} size={1} className="text-white" />
                                     </div>
                                 </a>
                                 {/* LinkedIn */}
-                                <a href="https://www.linkedin.com/company/enactussfu/?originalSubdomain=ca" aria-label="LinkedIn" target="_blank" className="group">
+                                <a href="https://www.linkedin.com/company/enactussfu/?originalSubdomain=ca" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="group">
                                     <div className="grid h-[40px] w-[40px] place-items-center rounded-full bg-[#262626]">
                                         <Icon path={mdiLinkedin} size={1} className="text-white" />
                                     </div>
                                 </a>
                                 {/* Email (copies) */}
-                                <button type="button" onClick={handleCopyEmail} aria-label="Copy email address" target="_blank" className="group">
+                                <button type="button" onClick={handleCopyEmail} aria-label={`Copy email address ${CONTACT_EMAIL}`} className="group">
                                     <div className="grid h-[40px] w-[40px] place-items-center rounded-full bg-[#262626]">
                                         <Icon path={mdiEmailOutline} size={1} className="text-white" />
                                     </div>
@@ -74,9 +77,7 @@ function Footer() {
                                     Copyright © Enactus {currentYear}. All rights reserved.
                                 </div>
                                 <div className="flex items-center gap-4 text-[16px] font-medium tracking-[-0.015em] text-[#F5F5F5]">
-                                    <a className="transition ease-in-out duration-100 hover:cursor-mouse">Privacy Policy</a>
-                                    <span>|</span>
-                                    <a href="https://www.sfu.ca/communicators-toolkit/brand/guidelines/writing/editorial-style-guide/language-grammar/territorial-acknowledgements.html" className="transition ease-in-out duration-100 hover:underline hover:cursor-pointer">Land Acknowledgment</a>
+                                    <a href="https://www.sfu.ca/communicators-toolkit/brand/guidelines/writing/editorial-style-guide/language-grammar/territorial-acknowledgements.html" target="_blank" rel="noopener noreferrer" className="transition ease-in-out duration-100 hover:underline hover:cursor-pointer">Land Acknowledgment</a>
                                 </div>
                             </div>
                         </div>
@@ -98,11 +99,11 @@ function Footer() {
                                     { name: "The Team", link: "/team" },
                                     { name: "About Us", link: "/about" },
                                     { name: "History", link: "/about#history" },
-                                    { name: "Awards", link: "/about#awards" }
+                                    { name: "Awards", link: "/competition" }
                                 ].map((item) => (
-                                    <a key={item.name} href={item.link} className="transition ease-in-out duration-100 hover:underline hover:cursor-pointer">
+                                    <Link key={item.name} href={item.link} className="transition ease-in-out duration-100 hover:underline hover:cursor-pointer">
                                         {item.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -117,11 +118,13 @@ function Footer() {
                                     { name: "Alara", link: "/projects#Alara" },
                                     { name: "Nourish", link: "/projects#Nourish" },
                                     { name: "NextSpark", link: "/projects#NextSpark" },
-                                    { name: "Second Savour", link: "/projects#Second Savour" }
+                                    { name: "Renovo", link: "/projects#Renovo" },
+                                    { name: "SensMS", link: "/projects#SensMS" },
+                                    { name: "Second Savour", link: "/projects#SecondSavour" }
                                 ].map((project) => (
-                                    <a key={project.name} href={project.link} className="transition ease-in-out duration-100 hover:underline hover:cursor-pointer">
+                                    <Link key={project.name} href={project.link} className="transition ease-in-out duration-100 hover:underline hover:cursor-pointer">
                                         {project.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -134,9 +137,9 @@ function Footer() {
                                     { name: "Venture Connect", link: "/ventureconnect" },
                                     { name: "Forward Vision", link: "/forwardVision" },
                                 ].map((project) => (
-                                    <a key={project.name} href={project.link} className="block transition ease-in-out duration-100 hover:underline hover:cursor-pointer">
+                                    <Link key={project.name} href={project.link} className="block transition ease-in-out duration-100 hover:underline hover:cursor-pointer">
                                         {project.name}
-                                    </a>
+                                    </Link>
                                 ))}
                             </div>
                         </div>
@@ -146,13 +149,19 @@ function Footer() {
                             <div className="text-[14px] font-semibold tracking-[-0.025em] text-[#FFC220]">Get Involved</div>
                             <div className="space-y-4 text-[14px] text-[#D4D4D4] flex flex-col">
                                 {[
-                                    { name: "Join Our Team", link: "https://www.instagram.com/enactussfu/" },
+                                    { name: "Join Our Team", link: "https://www.instagram.com/enactussfu/", external: true },
                                     { name: "Sponsor Us", link: "/sponsor" },
-                                    { name: "Contact Us", link: "https://www.instagram.com/enactussfu/" }
+                                    { name: "Contact Us", link: `mailto:${CONTACT_EMAIL}`, external: true }
                                 ].map((item) => (
-                                    <a key={item.name} href={item.link} target="_blank" className="transition ease-in-out duration-100 hover:underline hover:cursor-pointer">
-                                        {item.name}
-                                    </a>
+                                    item.external ? (
+                                        <a key={item.name} href={item.link} target="_blank" rel="noopener noreferrer" className="transition ease-in-out duration-100 hover:underline hover:cursor-pointer">
+                                            {item.name}
+                                        </a>
+                                    ) : (
+                                        <Link key={item.name} href={item.link} className="transition ease-in-out duration-100 hover:underline hover:cursor-pointer">
+                                            {item.name}
+                                        </Link>
+                                    )
                                 ))}
                             </div>
                         </div>

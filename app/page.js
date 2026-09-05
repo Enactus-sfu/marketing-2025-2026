@@ -7,6 +7,11 @@ import CheckLabel from "./components/checkLabel";
 import ProjectCard from "./components/projectCard";
 import ImgCarousel from "./components/imgCarousel";
 
+export const metadata = {
+  description:
+    "Enactus SFU empowers students to build entrepreneurial projects that create measurable impact — 8,600+ lives touched and 115,000+ volunteer hours.",
+};
+
 function page() {
   const items = [
     {
@@ -28,7 +33,7 @@ function page() {
 
   const stats = [
     { header: "15", body: "Community Initiatives" },
-    { header: "1200", body: "Members Involved" },
+    { header: "1,200+", body: "Members Involved" },
     { header: "8,600+", body: "Lives Impacted" },
     { header: "115,000+", body: "Volunteer Hours" },
     // { header: "15,000+", body: "Projects throughout 2012-2025." },
@@ -57,7 +62,7 @@ function page() {
     {
       name: "Alara",
       description:
-        "Meet Alara, an eco-friendly bioplastic born from Earth's waters, designed for Earth's future. Alara is leveraging Earth's natural resources to create a 100% biodegradable bioplastic to tackle the plastic pollution crisis, pushing the economy towards a more sustainable future.",
+        "Meet Alara, an eco-friendly bioplastic born from Earth’s waters, designed for Earth’s future. Alara is leveraging Earth’s natural resources to create a 100% biodegradable bioplastic to tackle the plastic pollution crisis, pushing the economy towards a more sustainable future.",
       // cta: "google.ca",
       // linkedin: "google.ca",
       // instagram: "google.ca",
@@ -116,7 +121,7 @@ function page() {
       <section className="flex justify-center relative h-[250px] min-[30rem]:h-auto overflow-hidden">
         <Image
           src="/images/hero.png"
-          alt="Hero Image"
+          alt="Enactus SFU members at the annual team photo"
           width={1920}
           height={1080}
           className="object-cover saturate-85"

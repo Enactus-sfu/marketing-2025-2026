@@ -1,7 +1,6 @@
 import React from "react";
 import Button from "../components/button";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 
 function imglabel({
@@ -14,12 +13,13 @@ function imglabel({
   instagram,
   linkedin,
   img,
+  imgAlt,
 }) {
   return (
     <div className="bg-primary-gray flex flex-col gap-[32px] p-[24px] lg:p-[48px] w-[100%] h-auto rounded-[16px]">
       <Image
         src={img}
-        alt="Hero Image"
+        alt={imgAlt || header}
         width={1920}
         height={1080}
         className="w-full h-auto]"
@@ -61,12 +61,12 @@ function imglabel({
             <div className="flex flex-row gap-[24px]">
               {/* Instagram CTA */}
               <a href={instagram} target="_blank" rel="noopener noreferrer">
-                <InstagramIcon fontSize="large" className="text-white" />
+                <FaInstagram size={35} className="text-white" />
               </a>
 
               {/* LinkedIn CTA */}
               <a href={linkedin} target="_blank" rel="noopener noreferrer">
-                <LinkedInIcon fontSize="large" className="text-white" />
+                <FaLinkedin size={35} className="text-white" />
               </a>
             </div>
           )

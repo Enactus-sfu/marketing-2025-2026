@@ -6,6 +6,12 @@ import { MdPeople, MdHandshake } from "react-icons/md";
 import Button from "../components/button";
 import ImgCarousel from "../components/imgCarousel";
 
+export const metadata = {
+  title: "Venture Connect",
+  description:
+    "An afternoon workshop and fireside chat connecting aspiring entrepreneurs with founders and industry leaders.",
+};
+
 function page() {
   return (
     <div className="flex flex-col mt-[16px] md:mt-0 gap-[16px] md:gap-[64px] pb-[48px]">

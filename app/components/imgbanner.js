@@ -1,22 +1,20 @@
 import React from "react";
 import Button from "../components/button";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { FaExternalLinkAlt } from "react-icons/fa";
+import { FaExternalLinkAlt, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
 
 
-function imgbanner({ header, body, cta1, cta2, instagram, linkedin, img, pm1, pm2, pm1contact, pm2contact, website }) {
+function imgbanner({ header, body, cta1, cta2, instagram, linkedin, img, pm1, pm2, pm1contact, pm2contact, website, imgAlt, priority = false }) {
   return (
     <div className="flex flex-col gap-[36px]">
       <div className="w-full h-[300px] md:h-[450px] lg:h-[600px] relative overflow-hidden">
         <Image
           src={img}
-          alt="Hero Image"
+          alt={imgAlt || `${header} project banner`}
           fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 90vw, 1200px"
           className="object-cover"
-          priority
-          unoptimized
+          priority={priority}
         />
       </div>
       <div className="flex flex-col gap-[12px] md:gap-[48px] justify-between h-full ">
@@ -83,15 +81,15 @@ function imgbanner({ header, body, cta1, cta2, instagram, linkedin, img, pm1, pm
             <div className="flex flex-row gap-[24px]">
               {/* Instagram CTA */}
               {instagram && (
-                <a href={instagram} target="_blank" rel="noopener noreferrer">
-                  <InstagramIcon fontSize="large" className="white" />
+                <a href={instagram} target="_blank" rel="noopener noreferrer" aria-label={`${header} on Instagram`}>
+                  <FaInstagram size={35} className="text-white" />
                 </a>
               )}
 
               {/* LinkedIn CTA */}
               {linkedin && (
-                <a href={linkedin} target="_blank" rel="noopener noreferrer">
-                  <LinkedInIcon fontSize="large" className="white" />
+                <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${header} on LinkedIn`}>
+                  <FaLinkedin size={35} className="text-white" />
                 </a>
               )}
             </div>

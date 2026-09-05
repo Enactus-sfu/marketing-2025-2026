@@ -3,9 +3,13 @@ import Header from "../components/header";
 import ImgLabel from "../components/imglabel";
 import ConnectCard from "../components/connectCard";
 import IconLabel from "../components/iconLabel";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import PlaceIcon from "@mui/icons-material/Place";
-import HowToRegIcon from "@mui/icons-material/HowToReg";
+import { MdCalendarMonth, MdPlace, MdHowToReg } from "react-icons/md";
+
+export const metadata = {
+  title: "Events",
+  description:
+    "Forward Vision, Venture Connect and more — workshops, pitch competitions and networking nights hosted by Enactus SFU at SFU Burnaby and Harbour Centre.",
+};
 
 function page() {
   return (
@@ -48,14 +52,14 @@ function page() {
 
           <div className="flex flex-col md:flex-row lg:flex-col gap-[16px] md:gap-[24px] lg:gap-[16px]">
             <IconLabel
-              icon={<PlaceIcon fontSize="large" className="text-primary-yellow" />}
+              icon={<MdPlace size={35} className="text-primary-yellow" />}
               header="On campus and downtown"
               body="Events run across SFU Burnaby and Harbour Centre, so there's usually one close to wherever you study."
             ></IconLabel>
 
             <IconLabel
               icon={
-                <HowToRegIcon fontSize="large" className="text-primary-yellow" />
+                <MdHowToReg size={35} className="text-primary-yellow" />
               }
               header="Register on Luma"
               body="Every event opens for registration on the calendar. Subscribe once and you'll hear about new events as we announce them."
@@ -66,7 +70,7 @@ function page() {
             name="Luma"
             cta="Events"
             ctaLink="https://luma.com/enactussfu"
-            icon={<CalendarMonthIcon />}
+            icon={<MdCalendarMonth size={24} />}
           ></ConnectCard>
         </div>
 

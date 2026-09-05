@@ -10,9 +10,10 @@ function Button({
   type = "button",
   target,
   cta,
+  ariaLabel,
 }) {
   const baseClasses =
-    "items-center text-white hover:text-black hover:cursor-pointer ease-in-out duration-[300ms] focus:bg-red-600 w-fit font-dm-sans font-[600] text-[16px] leading-[1.4]";
+    "inline-flex items-center text-white hover:text-black hover:cursor-pointer ease-in-out duration-[300ms] focus:bg-red-600 w-fit font-dm-sans font-[600] text-[16px] leading-[1.4]";
 
   const variants = {
     primary: "bg-[#C70D00] hover:bg-primary-red",
@@ -27,17 +28,34 @@ function Button({
 
   const buttonClasses = `${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`;
 
-  return (
-    <a href={cta} target={target}>
-      <button
-        type={type}
-        onClick={onClick}
-        disabled={disabled}
+  // When a destination is supplied, render a single anchor styled as the button.
+  // Nesting <button> inside <a> (or <a> inside <a>) is invalid HTML and browsers
+  // silently restructure it, which broke these controls.
+  if (cta) {
+    const external = target === "_blank";
+    return (
+      <a
+        href={cta}
+        target={target}
+        rel={external ? "noopener noreferrer" : undefined}
+        aria-label={ariaLabel}
         className={buttonClasses}
       >
         {children}
-      </button>
-    </a>
+      </a>
+    );
+  }
+
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={ariaLabel}
+      className={buttonClasses}
+    >
+      {children}
+    </button>
   );
 }
 

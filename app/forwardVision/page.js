@@ -13,6 +13,12 @@ import {
 import Button from "../components/button";
 import Table from "../components/table";
 
+export const metadata = {
+  title: "Forward Vision",
+  description:
+    "An award-winning interdisciplinary entrepreneurship program bringing together over 40 students and 20 industry professionals to tackle real sustainability challenges.",
+};
+
 const timelineColumns = ["Event", "Date & Time", "Location", "Details"];
 const timelineRows = [
   [

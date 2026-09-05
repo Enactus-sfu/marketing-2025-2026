@@ -1,5 +1,4 @@
 import React from 'react'
-import BoltIcon from '@mui/icons-material/Bolt';
 
 function iconLabel({ icon, header, body, subheader }) {
     return (

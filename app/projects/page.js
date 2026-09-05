@@ -3,6 +3,12 @@ import Header from "../components/header";
 import ImgBanner from "../components/imgbanner";
 import Label from "../components/label";
 
+export const metadata = {
+  title: "Our Projects",
+  description:
+    "Explore the social enterprises run by Enactus SFU students, from bioplastics and STEM education to food-waste reduction and newcomer support.",
+};
+
 function page() {
   const projects = [
     {
@@ -13,10 +19,10 @@ function page() {
       // linkedin: "google.ca",
       // instagram: "google.ca",
       image: "/images/SKYES-Banner.jpg",
-      pm1: "Wilson Liang",
+      pm1: "Avneet Khangura",
       pmc1contact: "",
       pm2contact: "",
-      pm2: "Francesca Yalung",
+      pm2: "Akshaj Shrestha",
       website: "https://skyes-website.vercel.app/",
     },
     {
@@ -28,10 +34,8 @@ function page() {
         "https://www.linkedin.com/company/unify-social/posts/?feedView=all",
       instagram: "https://www.instagram.com/unifysocial.ca/",
       image: "/images/Unify-Banner.png",
-      pm1: "Cedric Tanafranca",
+      pm1: "Siya Madaan",
       pmc1contact: "",
-      pm2contact: "",
-      pm2: "Savar Gupta",
     },
     {
       name: "Alara",
@@ -41,10 +45,10 @@ function page() {
       // linkedin: "google.ca",
       // instagram: "google.ca",
       image: "/images/Alara-Banner.jpg",
-      pm1: "Jaideep Kochhar",
+      pm1: "Ruchi Sharma",
       pmc1contact: "",
       pm2contact: "",
-      pm2: "Ruchi Sharma",
+      pm2: "Joshua Li",
     },
     {
       name: "Nourish",
@@ -63,12 +67,13 @@ function page() {
     {
       name: "NextSpark",
       description:
-        "NextSpark is a hands-on STEM education program that provides interactive kits and engaging workshops to help students learn science, technology and engineering through real-world applications. By combining fun, discovery-based learning with structured support, NextSpark empowers students to build STEM skills and confidence in an accessible and exciting way",
+        "NextSpark is a hands-on STEM education program that provides interactive kits and engaging workshops to help students learn science, technology and engineering through real-world applications. By combining fun, discovery-based learning with structured support, NextSpark empowers students to build STEM skills and confidence in an accessible and exciting way.",
       // cta: "google.ca",
       // linkedin: "google.ca",
       // instagram: "google.ca",
       image: "/images/nextspark-new.jpg",
-      pm1: "Michael Gudz",
+      pm1: "Joaquin Ofreneo",
+      pm2: "Ryan Liang",
       pmc1contact: "",
       // pm2contact: "Savar Gupta",
       // pm2: "",
@@ -77,7 +82,7 @@ function page() {
     {
       name: "Renovo",
       description:
-        "Renovo is a not-for-profit that empowers Canadian veterans and Indigenous communities through multi-week business programs. Offering mentorship, hands-on start-up development, and seed funding opportunities, we renew purpose today, to reimagine tomorrow together",
+        "Renovo is a not-for-profit that empowers Canadian veterans and Indigenous communities through multi-week business programs. Offering mentorship, hands-on start-up development, and seed funding opportunities, we renew purpose today, to reimagine tomorrow together.",
       // cta: "google.ca",
       // linkedin: "google.ca",
       // instagram: "google.ca",
@@ -91,7 +96,7 @@ function page() {
     {
       name: "SensMS",
       description:
-        "SensMS empowers women with Multiple Sclerosis to better understand and manage the connection between their hormonal cycles and disease symptoms. Through a home-based digital app, it integrates health tracking, mental well-being, and community support to promote personalized, female-specific MS care",
+        "SensMS empowers women with Multiple Sclerosis to better understand and manage the connection between their hormonal cycles and disease symptoms. Through a home-based digital app, it integrates health tracking, mental well-being, and community support to promote personalized, female-specific MS care.",
       // instagram: "google.ca",
       image: "/images/SensMS-Banner.jpeg",
       pm1: "Hanko Ngu",
@@ -107,6 +112,8 @@ function page() {
       image: "/images/secondsavour-banner.png",
       pm1: "Justin Cheung",
       pmc1contact: "",
+      pm2: "Arianna Ha",
+      pm2contact: "",
       website: "https://www.secondsavour.ca/",
     },
   ];
@@ -188,9 +195,10 @@ function page() {
       ></Header>
 
       <div className="flex flex-col gap-[36px] md:gap-[48px] mb-[24px] md:mb-[48px]">
-        {projects.map((project) => (
-          <section id={project.name} key={project.name}>
+        {projects.map((project, i) => (
+          <section id={project.name.replace(/\s+/g, "")} key={project.name}>
             <ImgBanner
+              priority={i === 0}
               header={project.name}
               body={project.description}
               cta1={project.cta}

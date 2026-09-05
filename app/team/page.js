@@ -2,18 +2,24 @@ import React from 'react'
 import Leadership from "../components/leadership"
 import Header from "../components/header"
 
+export const metadata = {
+  title: "Our Team",
+  description:
+    "Meet the students leading Enactus SFU — our core operations team and the project managers behind each of our social enterprises.",
+};
+
 function page() {
     const leadershipList = [
         { name: "Naia Wong", position: "President", img: "/images/leadership/naia.jpg", linkedin: "https://www.linkedin.com/in/naia-wong/" },
-        { name: "Marianne Li", position: "Co-VP Ops", img: "/images/leadership/marianne.jpg", linkedin: "https://www.linkedin.com/in/marianne-li1311/" },
-        { name: "Wilson Liang", position: "Co-VP Ops", img: "/images/leadership/wilson.jpg", linkedin: "https://www.linkedin.com/in/wilson-liang1/" },
-        { name: "Hussain Naqvi", position: "Co-VP Strategy", img: "/images/leadership/hussain.jpg", linkedin: "https://www.linkedin.com/in/hussainaqvi/" },
-        { name: "Liam Santos", position: "Co-VP Strategy", img: "/images/leadership/liam.jpg", linkedin: "https://www.linkedin.com/in/liam-santoss/" },
-        { name: "Chloe Lu", position: "Co-VP Marketing", img: "/images/leadership/chloe.jpg", linkedin: "https://www.linkedin.com/in/chloelu02/" },
-        { name: "Faith Leung", position: "Co-VP Marketing", img: "/images/leadership/faith.jpg", linkedin: "https://www.linkedin.com/in/faith-leung-/" },
-        { name: "Michelle So", position: "Co-VP Inno", img: "/images/leadership/michelle-so.jpg", linkedin: "https://www.linkedin.com/in/michelle-so-221680295/" },
-        { name: "Winnie Wang", position: "Co-VP Inno", img: "/images/leadership/winnie.jpg", linkedin: "https://www.linkedin.com/in/winniiewg/" },
-        { name: "Patty Rattanaleelart", position: "Director Interal", img: "/images/leadership/patty.jpg", linkedin: "https://www.linkedin.com/in/patty-rattanaleelart/" },
+        { name: "Marianne Li", position: "Co-VP of Operations", img: "/images/leadership/marianne.jpg", linkedin: "https://www.linkedin.com/in/marianne-li1311/" },
+        { name: "Wilson Liang", position: "Co-VP of Operations", img: "/images/leadership/wilson.jpg", linkedin: "https://www.linkedin.com/in/wilson-liang1/" },
+        { name: "Hussain Naqvi", position: "Co-VP of Strategy", img: "/images/leadership/hussain.jpg", linkedin: "https://www.linkedin.com/in/hussainaqvi/" },
+        { name: "Liam Santos", position: "Co-VP of Strategy", img: "/images/leadership/liam.jpg", linkedin: "https://www.linkedin.com/in/liam-santoss/" },
+        { name: "Chloe Lu", position: "Co-VP of Marketing", img: "/images/leadership/chloe.jpg", linkedin: "https://www.linkedin.com/in/chloelu02/" },
+        { name: "Faith Leung", position: "Co-VP of Marketing", img: "/images/leadership/faith.jpg", linkedin: "https://www.linkedin.com/in/faith-leung-/" },
+        { name: "Michelle So", position: "Co-VP of Innovation", img: "/images/leadership/michelle-so.jpg", linkedin: "https://www.linkedin.com/in/michelle-so-221680295/" },
+        { name: "Winnie Wang", position: "Co-VP of Innovation", img: "/images/leadership/winnie.jpg", linkedin: "https://www.linkedin.com/in/winniiewg/" },
+        { name: "Patty Rattanaleelart", position: "Director of Internal", img: "/images/leadership/patty.jpg", linkedin: "https://www.linkedin.com/in/patty-rattanaleelart/" },
         { name: "Steven Learmonth", position: "Director of Finance", img: "/images/leadership/steven.jpg", linkedin: "https://www.linkedin.com/in/steven-learmonth/" },
         { name: "Anthea Deng", position: "Co-Director of Media", img: "/images/leadership/anthea.jpg", linkedin: "https://www.linkedin.com/in/antheadeng/" },
         { name: "Kaden Fong", position: "Co-Director of Media", img: "/images/leadership/kaden.jpg", linkedin: "https://www.linkedin.com/in/kaden-fong/" },
@@ -24,7 +30,7 @@ function page() {
         { name: "Juliana Manalo", position: "Co-Director of Events", img: "/images/leadership/juliana.jpg", linkedin: "https://www.linkedin.com/in/julianamanalo/" },
         { name: "Scott Higgins", position: "Co-Director of Events", img: "/images/leadership/scott.jpg", linkedin: "https://www.linkedin.com/in/scotthiggins02/" },
         { name: "Adrian Lai", position: "Co-Director of External", img: "/images/leadership/adrian.jpg", linkedin: "https://www.linkedin.com/in/adrian-lai-172017292/" },
-        { name: "Nikita Venkatachellum", position: "Co-Director of External", img: "/images/leadership/nikita.jpg", linkedin: "#" },
+        { name: "Nikita Venkatachellum", position: "Co-Director of External", img: "/images/leadership/nikita.jpg", linkedin: "" },
         { name: "Caleb Wu", position: "Director of Web & Tech", img: "/images/leadership/caleb.jpg", linkedin: "https://www.linkedin.com/in/caleb-wu-/" },
     ]
     const projectList = [

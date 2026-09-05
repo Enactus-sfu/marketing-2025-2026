@@ -14,9 +14,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Enactus SFU",
+  metadataBase: new URL("https://www.enactussfu.ca"),
+  title: {
+    default: "Enactus SFU",
+    template: "%s | Enactus SFU",
+  },
   description:
     "Enactus SFU empowers students to create entrepreneurial projects that make a positive impact on the community. Join us to innovate and lead!",
+  openGraph: {
+    siteName: "Enactus SFU",
+    locale: "en_CA",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {

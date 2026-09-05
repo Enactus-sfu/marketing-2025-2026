@@ -2,6 +2,12 @@ import React from "react";
 import Image from "next/image";
 import { MdBuild, MdFavorite, MdTrendingUp } from "react-icons/md";
 
+export const metadata = {
+  title: "About Us",
+  description:
+    "Enactus SFU turns community challenges into opportunities to innovate. Learn about our mission, our impact, and the Sustainable Development Goals we work toward.",
+};
+
 function page() {
   const items = [
     {
@@ -57,7 +63,7 @@ function page() {
 
   return (
     <div className="flex flex-col gap-[16px]">
-      <section className="flex flex-col mb-[16px] md:mb-[48px]">
+      <section id="history" className="flex flex-col mb-[16px] md:mb-[48px]">
         <div className="gutter flex flex-col gap-[16px]">
           <h1>
             Welcome to the journey of Enactus SFU, where innovation, passion,
@@ -99,7 +105,7 @@ function page() {
               <h3>
                 As one of the largest organizations at the Beedie School of
                 Business, Enactus SFU also has a strong legacy of competitive
-                excellence - consistently placing at Enactus Canada’s Regional
+                excellence — consistently placing at Enactus Canada’s Regional
                 and National Expositions, including multiple podium finishes in
                 recent years.
               </h3>
@@ -128,7 +134,7 @@ function page() {
           <h1 className="text-primary-yellow">Our Target SDG Goals</h1>
           <h2>
             Enactus SFU is expecting to execute projects for Sustainable
-            Development Goals in the 2024/2025 academic year.
+            Development Goals in the 2026/2027 academic year.
           </h2>
         </div>
 
