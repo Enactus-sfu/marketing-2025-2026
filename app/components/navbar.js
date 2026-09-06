@@ -16,7 +16,7 @@ function Navbar() {
         { label: "Team", link: "/team" },
         { label: "Projects", link: "/projects" },
         { label: "Events", link: "/events" },
-        { label: "Sponsorships", link: "/sponsor" },
+        { label: "Our Partners", link: "/sponsor" },
         { label: "Competition", link: "/competition" },
     ];
 
@@ -57,7 +57,7 @@ function Navbar() {
                                         key={item.label}
                                         href={item.link}
                                         aria-current={isActive ? "page" : undefined}
-                                        className={`leading-none transition-all text-[0.83rem] font-bold ${isActive
+                                        className={`leading-none whitespace-nowrap transition-all text-[0.83rem] font-bold ${isActive
                                             ? "text-[#ED8B6E]"
                                             : "text-white opacity-60 hover:opacity-100"
                                             }`}

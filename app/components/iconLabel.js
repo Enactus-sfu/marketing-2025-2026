@@ -1,6 +1,7 @@
 import React from 'react'
+import Button from './button'
 
-function iconLabel({ icon, header, body, subheader }) {
+function iconLabel({ icon, header, body, subheader, cta, ctaLink }) {
     return (
         <div className='p-[48px] bg-primary-gray rounded-[16px] flex flex-col gap-[16px] w-full'>
             {icon}
@@ -11,6 +12,11 @@ function iconLabel({ icon, header, body, subheader }) {
                 </div>
             }
             <h3 className="opacity-60">{body}</h3>
+            {cta && ctaLink && (
+                <Button size="large" cta={ctaLink} target="_blank" className="mt-[8px]">
+                    {cta}
+                </Button>
+            )}
         </div>
     )
 }

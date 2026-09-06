@@ -91,22 +91,13 @@ function page() {
     {
       name: "Renovo",
       description:
-        "Renovo is a not-for-profit that empowers Canadian veterans and Indigenous communities through multi-week business programs. Offering mentorship, hands-on start-up development, and seed funding opportunities, we renew purpose today, to reimagine tomorrow together",
+        "Renovo is a not-for-profit that empowers Indigenous communities through multi-week business programs. Offering mentorship, hands-on start-up development, and seed funding opportunities, we renew purpose today, to reimagine tomorrow together",
       // cta: "google.ca",
       // linkedin: "google.ca",
       // instagram: "google.ca",
       image: "/images/renovo-new.png",
     },
 
-    {
-      name: "SensMS",
-      description:
-        "SensMS empowers women with Multiple Sclerosis to better understand and manage the connection between their hormonal cycles and disease symptoms. Through a home-based digital app, it integrates health tracking, mental well-being, and community support to promote personalized, female-specific MS care",
-      // cta: "google.ca",
-      // linkedin: "google.ca",
-      // instagram: "google.ca",
-      image: "/images/SensMS-Banner.jpeg",
-    },
 
     {
       name: "Second Savour",
@@ -130,25 +121,18 @@ function page() {
 
         {/* Absolutely positioned centered text with golden glow effect */}
         <div className="absolute inset-0 flex flex-col gap-[16px] lg:gap-[27px] items-center justify-center">
-          <h1 className="hero-text text-white text-center golden-glow">
-            FUELED BY <br /> INNOVATION
-          </h1>
-
-          <h1 className="hero-text text-white text-center golden-glow">
-            LED WITH <br /> PASSION
-          </h1>
-
-          <h1 className="hero-text text-white text-center golden-glow">
-            DEFINED BY <br /> EXCELLENCE
+          <h1 className="hero-text text-white text-center golden-glow uppercase flex flex-col gap-[8px] lg:gap-[16px]">
+            <span className="block">Growth</span>
+            <span className="block">Innovation</span>
+            <span className="block">Connection</span>
           </h1>
         </div>
       </section>
 
       <section className="padding mb-[48px]">
-        <div className="flex flex-col gap-[12px]">
+        <div className="flex flex-col gap-[12px] items-center text-center max-w-[65ch] mx-auto">
           <h2>
-            {" "}
-            We build projects that create a positive impact on our community.
+            We build projects to create positive impact on communities.
           </h2>
 
           <div className="flex flex-col gap-[8px] mt-[12px] mb-[24px]">
@@ -164,19 +148,19 @@ function page() {
           </div>
 
           <Button size="large" style="primary" cta="/about">
-            Our Story
+            Read Our Story
           </Button>
         </div>
       </section>
 
       <section className="section-standard">
-        <div className="flex flex-col gap-[16px] w-fill ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[16px] lg:gap-[20px] w-full">
           {items.map((item) => {
             const IconComponent = item.icons;
 
             return (
               <div
-                className="flex flex-col gap-6 md:flex-row md:gap-12 bg-primary-gray px-[24px] py-[24px] w-fill h-fit rounded-[16px]"
+                className="flex flex-col gap-6 md:justify-between md:min-h-[480px] bg-primary-gray px-[24px] py-[24px] md:p-[32px] w-full rounded-[16px]"
                 key={item.label}
               >
                 {IconComponent === "MdConstruction" ? (

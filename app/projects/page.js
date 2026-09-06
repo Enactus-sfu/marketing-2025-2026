@@ -20,8 +20,6 @@ function page() {
       // instagram: "google.ca",
       image: "/images/SKYES-Banner.jpg",
       pm1: "Avneet Khangura",
-      pmc1contact: "",
-      pm2contact: "",
       pm2: "Akshaj Shrestha",
       website: "https://skyes-website.vercel.app/",
     },
@@ -35,7 +33,6 @@ function page() {
       instagram: "https://www.instagram.com/unifysocial.ca/",
       image: "/images/Unify-Banner.png",
       pm1: "Siya Madaan",
-      pmc1contact: "",
     },
     {
       name: "Alara",
@@ -46,8 +43,6 @@ function page() {
       // instagram: "google.ca",
       image: "/images/Alara-Banner.jpg",
       pm1: "Ruchi Sharma",
-      pmc1contact: "",
-      pm2contact: "",
       pm2: "Joshua Li",
     },
     {
@@ -59,8 +54,6 @@ function page() {
       instagram: "https://www.instagram.com/nourishcandy/",
       image: "/images/Nourish-Banner.png",
       pm1: "Anthony Perera",
-      pmc1contact: "",
-      // pm2contact: "Savar Gupta",
       // pm2: "",
     },
 
@@ -74,36 +67,21 @@ function page() {
       image: "/images/nextspark-new.jpg",
       pm1: "Joaquin Ofreneo",
       pm2: "Ryan Liang",
-      pmc1contact: "",
-      // pm2contact: "Savar Gupta",
       // pm2: "",
     },
 
     {
       name: "Renovo",
       description:
-        "Renovo is a not-for-profit that empowers Canadian veterans and Indigenous communities through multi-week business programs. Offering mentorship, hands-on start-up development, and seed funding opportunities, we renew purpose today, to reimagine tomorrow together.",
+        "Renovo is a not-for-profit that empowers Indigenous communities through multi-week business programs. Offering mentorship, hands-on start-up development, and seed funding opportunities, we renew purpose today, to reimagine tomorrow together.",
       // cta: "google.ca",
       // linkedin: "google.ca",
       // instagram: "google.ca",
       image: "/images/renovo-new.png",
       pm1: "Valeria Lozada",
-      pmc1contact: "",
-      // pm2contact: "Savar Gupta",
       // pm2: "",
     },
 
-    {
-      name: "SensMS",
-      description:
-        "SensMS empowers women with Multiple Sclerosis to better understand and manage the connection between their hormonal cycles and disease symptoms. Through a home-based digital app, it integrates health tracking, mental well-being, and community support to promote personalized, female-specific MS care.",
-      // instagram: "google.ca",
-      image: "/images/SensMS-Banner.jpeg",
-      pm1: "Hanko Ngu",
-      pmc1contact: "",
-      // pm2contact: "Savar Gupta",
-      pm2: "Aryan Kaul",
-    },
 
     {
       name: "Second Savour",
@@ -111,14 +89,18 @@ function page() {
         "Second Savour reduces food waste by upcycling discarded citrus peels into delicious candied treats. Founded by SFU students in Burnaby, BC, it transforms produce that would otherwise be thrown away into a sweet, sustainable snack — leaving no part of the fruit behind.",
       image: "/images/secondsavour-banner.png",
       pm1: "Justin Cheung",
-      pmc1contact: "",
       pm2: "Arianna Ha",
-      pm2contact: "",
       website: "https://www.secondsavour.ca/",
     },
   ];
 
   const pastProjects = [
+    {
+      name: "SensMS",
+      description:
+        "SensMS empowers women with Multiple Sclerosis to better understand and manage the connection between their hormonal cycles and disease symptoms. Through a home-based digital app, it integrates health tracking, mental well-being, and community support to promote personalized, female-specific MS care.",
+      year: "2026",
+    },
     {
       name: "The Beekind Company",
       description:
@@ -190,6 +172,7 @@ function page() {
   return (
     <div className="flex flex-col gutter gap-[24px] md:gap-[48px] lg:gap-[64px]">
       <Header
+        center
         header="Projects"
         body="What we're currently working on."
       ></Header>
@@ -201,15 +184,11 @@ function page() {
               priority={i === 0}
               header={project.name}
               body={project.description}
-              cta1={project.cta}
-              cta2={project.cta}
               instagram={project.instagram}
               linkedin={project.linkedin}
               img={project.image}
               pm1={project.pm1}
-              pm1contact={project.pm1contact}
               pm2={project.pm2}
-              pm2contact={project.pm2contact}
               website={project.website}
             ></ImgBanner>
           </section>
