@@ -89,9 +89,9 @@ function page() {
 
         <Image
           src="/images/competitionBanner.jpg"
-          alt="A group picture of Enactus SFU members"
+          alt="The Enactus SFU delegation on stage at the 2026 Enactus Canada National Exposition"
           width={1920}
-          height={1080}
+          height={872}
           className="w-full h-fit"
           priority
         />
@@ -206,15 +206,15 @@ function page() {
 
         <div className="flex lg:flex-row flex-col w-[100%] gap-[16px]">
           <Image
-            src="/images/nat1.jpg"
-            alt="The Enactus SFU team at the Enactus Canada National Exposition"
+            src="/images/nationals-2026-backdrop.jpg"
+            alt="The 2026 Nationals presenting team in front of the Enactus backdrop"
             width={1920}
             height={1080}
             className="w-[100%] lg:w-[50%] h-auto"
           />
           <Image
-            src="/images/nat3.jpg"
-            alt="Enactus SFU semi-finalists at the Enactus Canada National Exposition"
+            src="/images/nationals-2026-team.jpg"
+            alt="The Enactus SFU 2026 Nationals team"
             width={1920}
             height={1080}
             className="w-[100%] lg:w-[50%] h-auto"
