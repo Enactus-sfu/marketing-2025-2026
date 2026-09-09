@@ -21,7 +21,7 @@ function imgbanner({ header, body, cta1, cta2, instagram, linkedin, img, pm1, pm
         <div className="flex flex-col gap-[16px] h-[100%] w-full ">
           <div className='flex flex-col md:flex-row gap-[32px] md:gap-[64px]'>
             <div className="flex flex-col gap-[16px] justify-between">
-              <h2>{header}</h2>
+              <h2 className="text-primary-yellow">{header}</h2>
               <h3>{body}</h3>
             </div>
             {(pm1 || pm2) && (
