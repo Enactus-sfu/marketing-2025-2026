@@ -210,7 +210,7 @@ function page() {
       </div>
 
       <div>
-        <h1 className="mb-8">Our Partners for Forward Vision</h1>
+        <h1 className="mb-8 text-center">Our Partners for Forward Vision</h1>
 
         <div className="flex flex-wrap justify-center gap-[16px] md:gap-[20px]">
           {forwardVisionList.map((sponsor) => (
