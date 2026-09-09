@@ -20,7 +20,7 @@ function leadership({ img, name, position, linkedin, key }) {
             aria-label={`${name}, ${position} — LinkedIn profile`}
             className="absolute inset-0 z-10"
           >
-            <div className="w-full h-full bg-gradient-to-br from-[#DD7600] to-[#C80D00] hover:opacity-[20%] opacity-[0] hover:cursor-pointer duration-300 transition-ease-in-out"></div>
+            <div className="w-full h-full bg-gradient-to-br from-[#51A2FF] to-[#2B7AD9] hover:opacity-[20%] opacity-[0] hover:cursor-pointer duration-300 transition-ease-in-out"></div>
           </a>
         )}
         <Image

@@ -13,12 +13,12 @@ function Button({
   ariaLabel,
 }) {
   const baseClasses =
-    "inline-flex items-center text-white hover:text-black hover:cursor-pointer ease-in-out duration-[300ms] focus:bg-red-600 w-fit font-dm-sans font-[600] text-[16px] leading-[1.4]";
+    "inline-flex items-center text-white hover:text-black hover:cursor-pointer ease-in-out duration-[300ms] focus:bg-[#2B7AD9] w-fit font-dm-sans font-[600] text-[16px] leading-[1.4]";
 
   const variants = {
-    primary: "bg-[#C70D00] hover:bg-primary-red",
+    primary: "bg-[#2B7AD9] hover:bg-primary-red",
     disabled: "bg-gray-200 text-gray-400",
-    icon: "pr-[24px] bg-[#C70D00] hover:bg-primary-red",
+    icon: "pr-[24px] bg-[#2B7AD9] hover:bg-primary-red",
   };
 
   const sizes = {
