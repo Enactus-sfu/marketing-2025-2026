@@ -28,8 +28,9 @@ function page() {
     { goal: "Quality education", img: "/images/goal4.png" },
     { goal: "Clean water and sanitation", img: "/images/goal6.png" },
     { goal: "Decent work and economic growth", img: "/images/goal8.png" },
+    { goal: "Industry, innovation and infrastructure", img: "/images/goal9.png" },
     { goal: "Reduced inequalities", img: "/images/goal10.png" },
-    { goal: "Sustainabile cities and communities", img: "/images/goal11.png" },
+    { goal: "Sustainable cities and communities", img: "/images/goal11.png" },
     {
       goal: "Responsible consumption and production",
       img: "/images/goal12.png",
@@ -73,7 +74,6 @@ function page() {
             entrepreneurship and the triple bottom-line to heart.
           </h1>
 
-          <h2 className="text-primary-yellow">About Enactus SFU</h2>
         </div>
 
         <div className="padding md:p-0">
@@ -92,7 +92,7 @@ function page() {
           <MdBuild size={50} color={"var(--color-primary-red)"} />
 
           <div className="flex flex-col gap-[16px] text-white">
-            <h2>Enactus SFU&apos;s Impact</h2>
+            <h2>Our Impact</h2>
             <div className="flex flex-col gap-[16px]">
               <h3>
                 At Enactus SFU, we tackle community issues by turning challenges
@@ -134,7 +134,7 @@ function page() {
           <h1 className="text-primary-yellow">Our Target SDG Goals</h1>
           <h2>
             Enactus SFU is expecting to execute projects for Sustainable
-            Development Goals in the 2026/2027 academic year.
+            Development Goals in the 2026/27 academic year.
           </h2>
         </div>
 
@@ -146,7 +146,7 @@ function page() {
               alt={goal.goal}
               width={600}
               height={600}
-              className="h-auto w-[calc(50%-6px)] md:w-[calc(15%-3px)] lg:w-[calc(16.6%-20px)]"
+              className="h-auto w-[calc(50%-6px)] md:w-[calc(15%-3px)] lg:w-[calc(14.28%-21px)]"
             ></Image>
           ))}
         </div>

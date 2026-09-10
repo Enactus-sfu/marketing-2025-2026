@@ -2,9 +2,37 @@ import React from "react";
 import Button from "../components/button";
 import { FaExternalLinkAlt, FaInstagram, FaLinkedin } from "react-icons/fa";
 import Image from "next/image";
+import { linkedinFor } from "../data/team";
 
+// A project manager's name. Links to their LinkedIn profile when the Team
+// roster has one, with a hover state so the link is discoverable.
+function ProjectManager({ name }) {
+  const url = linkedinFor(name);
+  if (!url) {
+    return <h3 className="opacity-[60%]">{name}</h3>;
+  }
+  return (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`${name} on LinkedIn`}
+      className="group inline-flex items-center gap-[8px] w-fit"
+    >
+      <h3 className="opacity-[60%] group-hover:opacity-100 group-hover:text-primary-yellow underline decoration-transparent group-hover:decoration-current underline-offset-4 transition duration-200">
+        {name}
+      </h3>
+      <FaLinkedin
+        size={16}
+        className="text-primary-yellow opacity-0 group-hover:opacity-100 transition duration-200"
+      />
+    </a>
+  );
+}
 
-function imgbanner({ header, body, cta1, cta2, instagram, linkedin, img, pm1, pm2, pm1contact, pm2contact, website, imgAlt, priority = false }) {
+function imgbanner({ header, body, instagram, linkedin, img, pm1, pm2, website, imgAlt, priority = false }) {
+  const managers = [pm1, pm2].filter(Boolean);
+
   return (
     <div className="flex flex-col gap-[36px]">
       <div className="w-full h-[300px] md:h-[450px] lg:h-[600px] relative overflow-hidden">
@@ -24,56 +52,28 @@ function imgbanner({ header, body, cta1, cta2, instagram, linkedin, img, pm1, pm
               <h2 className="text-primary-yellow">{header}</h2>
               <h3>{body}</h3>
             </div>
-            {(pm1 || pm2) && (
+            {managers.length > 0 && (
               <div className="flex flex-col gap-[8px] min-w-[25%]">
-                <h2 className="mb-2">Project Managers</h2>
-                {pm1 && (
-                  <div className="flex-row flex gap-[8px] justify-between">
-                    <h3 className='opacity-[60%]'> {pm1} </h3>
-                    <h3 className='opacity-[60%]'> {pm1contact} </h3>
-                  </div>
-                )}
-                {pm2 && (
-                  <div className="flex-row flex gap-[8px] justify-between">
-                    <h3 className='opacity-[60%]'> {pm2} </h3>
-                    <h3 className='opacity-[60%]'>{pm2contact} </h3>
-                  </div>
-                )}
-                <div className="h-full flex flex-col justify-end w-full items-start mt-[1rem]">
-                  {website && (
-
-                    <Button cta={website} size="small" style="primary">
-                      <div className='flex flex-row gap-[0.5rem] w-full items-center'><FaExternalLinkAlt /><h3>Website </h3></div>
+                <h2 className="mb-2">
+                  {managers.length > 1 ? "Project Managers" : "Project Manager"}
+                </h2>
+                {managers.map((name) => (
+                  <ProjectManager key={name} name={name} />
+                ))}
+                {website && (
+                  <div className="h-full flex flex-col justify-end w-full items-start mt-[1rem]">
+                    <Button cta={website} target="_blank" size="small" style="primary">
+                      <div className='flex flex-row gap-[0.5rem] w-full items-center'>
+                        <FaExternalLinkAlt />
+                        <h3>View {header}’s Website</h3>
+                      </div>
                     </Button>
-                    // <a href={website} target="_blank" className='hover:cursor-pointer hover:underline'> <div className='flex flex-row-reverse gap-[0.5rem] w-full items-center'><FaExternalLinkAlt /><h3>Website </h3></div></a>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             )}
           </div>
         </div>
-
-        {cta1 ?
-
-          cta2 == null ? (
-            <div className="flex flex-row gap-[24px]">
-              <Button size="large" style="primary">
-                {cta1}
-              </Button>
-            </div>
-          ) : (
-            <div className="flex flex-row gap-[24px]">
-              <Button size="large" style="primary">
-                {cta1}
-              </Button>
-              <Button size="large" style="primary">
-                {cta2}
-              </Button>
-            </div>
-          )
-          :
-          ""
-        }
 
         {
           //checks if instagram and linkedin links are available, otherwise removes them.

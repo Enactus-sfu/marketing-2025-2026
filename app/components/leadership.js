@@ -1,16 +1,13 @@
 import React from "react";
 import Image from "next/image";
 
-function leadership({ img, name, position, linkedin, key }) {
+function leadership({ img, name, position, linkedin }) {
   // Only render the overlay link when there is somewhere to go. A bare href="#"
   // (or an empty one) reads to a screen reader as an unnamed link to nowhere.
   const hasLink = Boolean(linkedin) && linkedin !== "#";
 
   return (
-    <div
-      className="flex flex-col items-center gap-[16px] flex-grow min-w-[24rem] lg:max-w-[30%] md:max-w-[30%] max-w-[45%]"
-      key={key}
-    >
+    <div className="flex flex-col items-center gap-[16px] flex-grow min-w-[24rem] lg:max-w-[30%] md:max-w-[30%] max-w-[45%]">
       <div className="relative w-full">
         {hasLink && (
           <a

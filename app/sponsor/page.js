@@ -5,7 +5,7 @@ import SponsorBanner from "../components/sponsorBanner.js";
 import Button from "../components/button.js";
 
 export const metadata = {
-  title: "Sponsors & Partners",
+  title: "Our Partners",
   description:
     "Partner with Enactus SFU. Meet the sponsors backing our projects and find out how your organization can support student-led social enterprise.",
 };
@@ -153,18 +153,17 @@ function page() {
 
   return (
     <div className="gutter flex flex-col gap-[54px] md:gap-[64px] lg:gap-[128px]">
-      <div className="">
-        <h3 className="text-primary-yellow mb-5">Sponsorships</h3>
+      <div className="flex flex-col items-center text-center gap-[16px]">
+        <h1>Our Partners</h1>
+        <h2 className="text-primary-yellow">Thank you to our partners!</h2>
 
-        <h1>Thank you to all our partners and sponsors!</h1>
-
-        <div className="flex gap-[24px] mt-[24px]">
+        <div className="flex flex-wrap justify-center gap-[16px] md:gap-[24px] mt-[8px]">
           <Button
             size="large"
             variant="primary"
-            cta="mailto:info@enactussfu.ca?subject=Hello%20Enactus%20SFU"
+            cta="mailto:info@enactussfu.ca?subject=Partnership%20Enquiry"
           >
-            Become a Sponsor
+            Partner With Us
           </Button>
           <Button
             size="large"
@@ -178,8 +177,6 @@ function page() {
       </div>
 
       <div className="flex flex-col gap-4">
-        <h1>Our Partners</h1>
-
         <div className="flex flex-col md:flex-row gap-[20px] justify-baseline">
           <SponsorBanner
             img="/images/EnactusLogo.png"
@@ -225,7 +222,7 @@ function page() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-4 lg:max-w-[60vw]">
+      <div className="flex flex-col gap-4 items-center text-center mx-auto lg:max-w-[60vw]">
         <h1>Interested in becoming a partner?</h1>
         <h3 className="text-white">
           If you would like to partner with us, you can contact us here at the
