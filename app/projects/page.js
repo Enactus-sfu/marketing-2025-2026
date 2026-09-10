@@ -76,7 +76,7 @@ function page() {
         "Renovo is a not-for-profit that empowers Indigenous communities through multi-week business programs. Offering mentorship, hands-on start-up development, and seed funding opportunities, we renew purpose today, to reimagine tomorrow together.",
       // cta: "google.ca",
       // linkedin: "google.ca",
-      instagram: "https://www.instagram.com/nextsparksfu/",
+      instagram: "https://www.instagram.com/renovo.ca/",
       image: "/images/renovo-new.png",
       pm1: "Valeria Lozada",
       // pm2: "",
