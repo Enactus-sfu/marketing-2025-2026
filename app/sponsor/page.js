@@ -155,7 +155,7 @@ function page() {
     <div className="gutter flex flex-col gap-[54px] md:gap-[64px] lg:gap-[128px]">
       <div className="flex flex-col items-center text-center gap-[16px]">
         <h1>Our Partners</h1>
-        <h2 className="text-primary-yellow">Thank you to our partners!</h2>
+        <h2 className="text-primary-pink">Thank you to our partners!</h2>
 
         <div className="flex flex-wrap justify-center gap-[16px] md:gap-[24px] mt-[8px]">
           <Button
@@ -224,7 +224,7 @@ function page() {
 
       <div className="flex flex-col gap-4 items-center text-center mx-auto lg:max-w-[60vw]">
         <h1>Interested in becoming a partner?</h1>
-        <h3 className="text-white">
+        <h3 className="text-primary-pink">
           If you would like to partner with us, you can contact us here at the
           button below and one of our staff members will get back to you.
         </h3>

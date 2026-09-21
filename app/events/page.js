@@ -67,7 +67,7 @@ function page() {
             aria-hidden="false"
             tabIndex={0}
           ></iframe>
-          <p className="text-[13px] text-white/60 text-right">
+          <p className="text-[13px] text-primary-pink/60 text-right">
             (click to view event details)
           </p>
         </div>

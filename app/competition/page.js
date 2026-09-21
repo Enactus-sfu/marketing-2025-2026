@@ -79,7 +79,7 @@ function page() {
       <div className="flex flex-col gap-[0px]">
         <div className="flex flex-col gap-[16px] items-center text-center mb-[24px] md:mb-[48px]">
           <h1>Competition</h1>
-          <h2 className="text-primary-yellow max-w-[65ch]">
+          <h2 className="text-primary-pink max-w-[65ch]">
             At the 2026 Regional Exposition, Simon Fraser University placed in
             all four categories and won 1st in both the TD Entrepreneurship
             and Community Empowerment Challenges — our strongest result in
@@ -100,7 +100,7 @@ function page() {
       <section className="flex flex-col gap-[48px] lg:gap-[64px] w-[100%]">
         <div className="flex flex-col gap-[24px]">
           <div className="flex flex-col gap-[12px]">
-            <h5 className="text-primary-yellow"> 2026 </h5>
+            <h5 className="text-primary-pink"> 2026 </h5>
             <h1> Regionals </h1>
           </div>
           <h3>
@@ -120,7 +120,7 @@ function page() {
                 height={1080}
                 className="w-[100%] h-auto"
               />
-              <h2 className="text-primary-red">
+              <h2 className="text-primary-pink">
                 {" "}
                 1st Place — Entrepreneurship Challenge{" "}
               </h2>
@@ -138,7 +138,7 @@ function page() {
                 height={1080}
                 className="w-[100%] h-auto"
               />
-              <h2 className="text-primary-red">
+              <h2 className="text-primary-pink">
                 {" "}
                 1st Place — Community Empowerment Challenge{" "}
               </h2>
@@ -159,7 +159,7 @@ function page() {
                 height={1080}
                 className="w-[100%] h-auto"
               />
-              <h2 className="text-primary-red">
+              <h2 className="text-primary-pink">
                 {" "}
                 2nd Place — Environmental Sustainability Challenge{" "}
               </h2>
@@ -177,7 +177,7 @@ function page() {
                 height={1080}
                 className="w-[100%] h-auto"
               />
-              <h2 className="text-primary-red">
+              <h2 className="text-primary-pink">
                 {" "}
                 2nd Place — Innovation &amp; Impact Challenge{" "}
               </h2>
@@ -194,7 +194,7 @@ function page() {
       <section className="flex flex-col gap-[48px] lg:gap-[64px] w-[100%]">
         <div className="flex flex-col gap-[24px]">
           <div className="flex flex-col gap-[12px]">
-            <h5 className="text-primary-yellow"> 2026 </h5>
+            <h5 className="text-primary-pink"> 2026 </h5>
             <h1> Nationals </h1>
           </div>
           <h3>
@@ -222,7 +222,7 @@ function page() {
         </div>
 
         <div className="flex flex-col gap-[16px]">
-          <h2 className="text-primary-red"> Semifinalist </h2>
+          <h2 className="text-primary-pink"> Semifinalist </h2>
           <div className="flex flex-col gap-[2px]">
             <h3>
               Presenters: Lauren Riestra, Cameron Miranda, Amber Holliday, Siya
@@ -235,7 +235,7 @@ function page() {
       </section>
 
       <section className="flex flex-col gap-[32px] md:gap-[48px] lg:gap-[64px]">
-        <h3 className="text-primary-yellow"> Previous Years </h3>
+        <h3 className="text-primary-pink"> Previous Years </h3>
         <div className="flex flex-col gap-[16px]">
           {achievements.map((project) => (
             <YearLabel
