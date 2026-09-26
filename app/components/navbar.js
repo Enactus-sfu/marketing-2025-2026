@@ -58,7 +58,7 @@ function Navbar() {
                                         href={item.link}
                                         aria-current={isActive ? "page" : undefined}
                                         className={`leading-none whitespace-nowrap transition-all text-[0.83rem] font-bold ${isActive
-                                            ? "text-[#ED8B6E]"
+                                            ? "text-primary-red"
                                             : "text-white opacity-60 hover:opacity-100"
                                             }`}
                                     >

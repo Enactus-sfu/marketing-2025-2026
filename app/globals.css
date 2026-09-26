@@ -3,8 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap"); */
 
 @theme {
-  --color-primary-red: #dc5939;
-  --color-secondary-red: #c70d00;
+  /* Accent colours. The token names are historical; the values are now blue. */
+  --color-primary-red: #51a2ff;
+  --color-secondary-red: #1e6fd9;
   --color-primary-gray: #282828;
   --spacing-lg-gutter: 100px;
   --color-primary-yellow: #ffc220;
