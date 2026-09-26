@@ -55,13 +55,13 @@ function ImgCarousel({ Carousel = [] }) {
                 <div className='absolute inset-0 flex flex-row justify-between items-center z-10'>
                     <button
                         onClick={goToPrevious}
-                        className='text-white mx-[24px]  hover:bg-primary-red hover:cursor-pointer ease-in-out duration-[300ms] px-[8px] py-[16px] bg-[#C70D00] rounded-[16px]'
+                        className='text-white mx-[24px]  hover:bg-primary-red hover:cursor-pointer ease-in-out duration-[300ms] px-[8px] py-[16px] bg-secondary-red rounded-[16px]'
                     >
                         <IoIosArrowBack className='text-4xl text-white' />
                     </button>
                     <button
                         onClick={goToNext}
-                        className='text-white mx-[24px]  hover:bg-primary-red hover:cursor-pointer ease-in-out duration-[300ms] px-[8px] py-[16px] bg-[#C70D00] rounded-[16px] '
+                        className='text-white mx-[24px]  hover:bg-primary-red hover:cursor-pointer ease-in-out duration-[300ms] px-[8px] py-[16px] bg-secondary-red rounded-[16px] '
                     >
                         <IoIosArrowForward className='text-4xl text-white' />
                     </button>
