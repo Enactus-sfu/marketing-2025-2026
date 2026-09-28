@@ -136,7 +136,7 @@ function page() {
           </h2>
 
           <div className="flex flex-col gap-[8px] mt-[12px] mb-[24px]">
-            <h6 className="text-primary-yellow">But what does that mean?</h6>
+            <h6 className="text-black">But what does that mean?</h6>
             <h3>
               {" "}
               What others see as challenges, we see as opportunities to
@@ -182,7 +182,7 @@ function page() {
                   ""
                 )}
 
-                <div className="flex flex-col gap-2 text-white">
+                <div className="flex flex-col gap-2 text-black">
                   <h2>{item.label} </h2>
                   <h3> {item.body}</h3>
                 </div>

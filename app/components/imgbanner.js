@@ -19,12 +19,12 @@ function ProjectManager({ name }) {
       aria-label={`${name} on LinkedIn`}
       className="group inline-flex items-center gap-[8px] w-fit"
     >
-      <h3 className="opacity-[60%] group-hover:opacity-100 group-hover:text-primary-yellow underline decoration-transparent group-hover:decoration-current underline-offset-4 transition duration-200">
+      <h3 className="opacity-[60%] group-hover:opacity-100 underline decoration-transparent group-hover:decoration-current underline-offset-4 transition duration-200">
         {name}
       </h3>
       <FaLinkedin
         size={16}
-        className="text-primary-yellow opacity-0 group-hover:opacity-100 transition duration-200"
+        className="text-black opacity-0 group-hover:opacity-100 transition duration-200"
       />
     </a>
   );
@@ -49,7 +49,7 @@ function imgbanner({ header, body, instagram, linkedin, img, pm1, pm2, website, 
         <div className="flex flex-col gap-[16px] h-[100%] w-full ">
           <div className='flex flex-col md:flex-row gap-[32px] md:gap-[64px]'>
             <div className="flex flex-col gap-[16px] justify-between">
-              <h2 className="text-primary-yellow">{header}</h2>
+              <h2 className="text-black">{header}</h2>
               <h3>{body}</h3>
             </div>
             {managers.length > 0 && (
@@ -82,14 +82,14 @@ function imgbanner({ header, body, instagram, linkedin, img, pm1, pm2, website, 
               {/* Instagram CTA */}
               {instagram && (
                 <a href={instagram} target="_blank" rel="noopener noreferrer" aria-label={`${header} on Instagram`}>
-                  <FaInstagram size={35} className="text-white" />
+                  <FaInstagram size={35} className="text-black" />
                 </a>
               )}
 
               {/* LinkedIn CTA */}
               {linkedin && (
                 <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${header} on LinkedIn`}>
-                  <FaLinkedin size={35} className="text-white" />
+                  <FaLinkedin size={35} className="text-black" />
                 </a>
               )}
             </div>
