@@ -31,7 +31,7 @@ function leadership({ img, name, position, linkedin }) {
       </div>
       <div className="flex flex-col gap-[-10px] text-center">
         <h3> {name} </h3>
-        <p className="text-white opacity-[70%]">{position}</p>
+        <p className="text-black opacity-[70%]">{position}</p>
       </div>
     </div>
   );

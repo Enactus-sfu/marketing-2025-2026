@@ -5,11 +5,11 @@
 @theme {
   --color-primary-red: #dc5939;
   --color-secondary-red: #c70d00;
-  --color-primary-gray: #282828;
+  --color-primary-gray: #f5f5f5;
   --spacing-lg-gutter: 100px;
   --color-primary-yellow: #ffc220;
-  --background: black;
-  --foreground: white;
+  --background: white;
+  --foreground: black;
   --font-family-sf: "SF Pro Display", sans-serif;
   --font-family-dm: "DM Sans", sans-serif;
 }
@@ -27,7 +27,7 @@
   h4,
   h5,
   h6 {
-    color: #ffffff;
+    color: #000000;
   }
 
   h1 {
@@ -68,7 +68,7 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: #0a0a0a;
+      --background: white;
       --foreground: black;
     }
   }
@@ -105,7 +105,7 @@
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
 .gutter {

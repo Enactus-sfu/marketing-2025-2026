@@ -30,14 +30,14 @@ function ImgCarousel({ Carousel = [] }) {
                 <div className='flex flex-row gap-4'>
                     {Carousel.map((item, index) => (
                         <div key={index} className='flex flex-col gap-1 flex-1'>
-                            <div className='text-white text-sm font-medium text-center'>
+                            <div className='text-black text-sm font-medium text-center'>
                                 <h3>{item.name || ``}</h3>
                             </div>
 
                             <div
                                 className={`w-full h-1 border transition-colors duration-300 ${index === currentIndex
                                     ? 'bg-primary-red border-primary-red'
-                                    : 'bg-white border-white'
+                                    : 'bg-black/20 border-black/20'
                                     }`}
                             />
                         </div>
@@ -47,7 +47,7 @@ function ImgCarousel({ Carousel = [] }) {
 
             <div className='relative w-full h-[80vh] overflow-hidden flex flex-col gap-[16px] '>
 
-                {Carousel.length === 0 ? <div className='border-1 border-white w-full'></div> : ""}
+                {Carousel.length === 0 ? <div className='border-1 border-black/20 w-full'></div> : ""}
 
                 <div className='absolute left-0 top-0 w-[20%] h-full bg-gradient-to-r from-black/50 to-transparent z-5'></div>
                 <div className='absolute right-0 top-0 w-[20%] h-full bg-gradient-to-l from-black/50 to-transparent z-5'></div>

@@ -41,14 +41,14 @@ function page() {
 
           <div className="flex flex-col md:flex-row lg:flex-col gap-[16px] md:gap-[24px] lg:gap-[16px]">
             <IconLabel
-              icon={<MdPlace size={35} className="text-primary-yellow" />}
+              icon={<MdPlace size={35} className="text-black" />}
               header="On campus and downtown"
               body="Events run across SFU Burnaby and Harbour Centre, so there's usually one close to wherever you study."
             ></IconLabel>
 
             <IconLabel
               icon={
-                <MdHowToReg size={35} className="text-primary-yellow" />
+                <MdHowToReg size={35} className="text-black" />
               }
               header="Register on Luma"
               body="Every event opens for registration on the calendar. Subscribe once and you'll hear about new events as we announce them."
@@ -60,14 +60,14 @@ function page() {
 
         <div className="flex flex-col gap-[8px] w-full lg:w-[700px] lg:shrink-0 lg:self-stretch lg:min-h-[560px]">
           <iframe
-            src="https://luma.com/embed/calendar/cal-RsECMxK7cyQW34Y/events?lt=dark"
+            src="https://luma.com/embed/calendar/cal-RsECMxK7cyQW34Y/events?lt=light"
             title="Enactus SFU events calendar"
-            className="w-full h-[560px] lg:h-auto lg:flex-1 rounded-[16px] border border-white/10"
+            className="w-full h-[560px] lg:h-auto lg:flex-1 rounded-[16px] border border-black/10"
             allowFullScreen
             aria-hidden="false"
             tabIndex={0}
           ></iframe>
-          <p className="text-[13px] text-white/60 text-right">
+          <p className="text-[13px] text-black/60 text-right">
             (click to view event details)
           </p>
         </div>

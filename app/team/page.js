@@ -24,7 +24,7 @@ function page() {
                     ></Leadership>
                 ))}
             </div>
-            <h2 className='text-primary-yellow mt-[2rem] text-center'> Project Operations </h2>
+            <h2 className='text-black mt-[2rem] text-center'> Project Operations </h2>
             <div className='flex flex-wrap gap-[24px] justify-center flex-row'>
                 {projectList.map((person) => (
                     <Leadership
