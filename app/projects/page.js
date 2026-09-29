@@ -67,6 +67,7 @@ function page() {
       image: "/images/nextspark-new.jpg",
       pm1: "Joaquin Ofreneo",
       pm2: "Ryan Liang",
+      website: "https://www.nextsparklabs.com/",
       // pm2: "",
     },
 
