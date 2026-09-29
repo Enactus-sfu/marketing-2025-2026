@@ -9,7 +9,7 @@ function Table({ columns, rows }) {
             {columns.map((column) => (
               <th
                 key={column}
-                className="p-[16px] lg:p-[24px] text-[14px] font-[600] leading-[1.4] text-primary-yellow whitespace-nowrap"
+                className="p-[16px] lg:p-[24px] text-[14px] font-[600] leading-[1.4] text-primary-pink whitespace-nowrap"
               >
                 {column}
               </th>
@@ -27,8 +27,8 @@ function Table({ columns, rows }) {
                     key={cellIndex}
                     className={`p-[16px] lg:p-[24px] text-[16px] leading-[1.5] ${
                       isFirst
-                        ? "font-[600] text-white whitespace-nowrap"
-                        : "text-white/60"
+                        ? "font-[600] text-primary-pink whitespace-nowrap"
+                        : "text-primary-pink/60"
                     } ${isLast ? "min-w-[320px] w-full" : "min-w-[200px]"}`}
                   >
                     {cell}

@@ -19,7 +19,7 @@ function ProjectManager({ name }) {
       aria-label={`${name} on LinkedIn`}
       className="group inline-flex items-center gap-[8px] w-fit"
     >
-      <h3 className="opacity-[60%] group-hover:opacity-100 group-hover:text-primary-yellow underline decoration-transparent group-hover:decoration-current underline-offset-4 transition duration-200">
+      <h3 className="opacity-[60%] group-hover:opacity-100 group-hover:text-primary-pink underline decoration-transparent group-hover:decoration-current underline-offset-4 transition duration-200">
         {name}
       </h3>
       <FaLinkedin
@@ -49,7 +49,7 @@ function imgbanner({ header, body, instagram, linkedin, img, pm1, pm2, website, 
         <div className="flex flex-col gap-[16px] h-[100%] w-full ">
           <div className='flex flex-col md:flex-row gap-[32px] md:gap-[64px]'>
             <div className="flex flex-col gap-[16px] justify-between">
-              <h2 className="text-primary-yellow">{header}</h2>
+              <h2 className="text-primary-pink">{header}</h2>
               <h3>{body}</h3>
             </div>
             {managers.length > 0 && (

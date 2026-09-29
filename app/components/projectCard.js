@@ -13,7 +13,7 @@ function projectCard({ img, header, body }) {
       />
 
       <div className="tabindex-1 absolute inset-0 bg-no-repeat bg-black/30 hover:bg-black/65 active:bg-black/65 p-[32px] md:p-[48px] flex flex-col items-center lg:justify-center text-center transition-all duration-[300ms] ease-in-out hover:cursor-pointer overflow-scroll lg:overflow-hidden">
-        <h2 className="text-primary-yellow mb-3 mt-[16px] lg:mt-0">
+        <h2 className="text-primary-pink mb-3 mt-[16px] lg:mt-0">
           {header ?? "Project Title"}
         </h2>
         <h3 className="text-center opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-[300ms] ease-in-out">

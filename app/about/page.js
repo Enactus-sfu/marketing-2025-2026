@@ -91,7 +91,7 @@ function page() {
         <div className="flex flex-col gap-6 md:gap-[16px] bg-primary-gray px-[24px] py-[24px] w-fill h-fit rounded-[16px]">
           <MdBuild size={50} color={"var(--color-primary-red)"} />
 
-          <div className="flex flex-col gap-[16px] text-white">
+          <div className="flex flex-col gap-[16px] text-primary-pink">
             <h2>Our Impact</h2>
             <div className="flex flex-col gap-[16px]">
               <h3>
@@ -131,7 +131,7 @@ function page() {
 
       <section className="section-standard mt-[24px] mb-[24px] md:mb-[48px] md:mt-[48px]">
         <div className="flex flex-col gap-[16px] mb-[24px] md:mb-[48px] mt-auto">
-          <h1 className="text-primary-yellow">Our Target SDG Goals</h1>
+          <h1 className="text-primary-pink">Our Target SDG Goals</h1>
           <h2>
             Enactus SFU is expecting to execute projects for Sustainable
             Development Goals in the 2026/27 academic year.
@@ -173,7 +173,7 @@ function page() {
                   ""
                 )}
 
-                <div className="flex flex-col gap-2 text-white">
+                <div className="flex flex-col gap-2 text-primary-pink">
                   <h2>{item.label} </h2>
                   <h3> {item.body}</h3>
                 </div>

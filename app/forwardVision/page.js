@@ -100,7 +100,7 @@ function page() {
 
       <div className="section-standard gap-[16px] md:gap-[24px]">
         <h2> What To Expect At Forward Vision</h2>
-        <h3 className="text-primary-yellow">
+        <h3 className="text-primary-pink">
           This year&apos;s theme, Sustainable Business, challenges students to
           move beyond solution-building and critically examine the
           environmental and social challenges facing their communities.
@@ -143,7 +143,7 @@ function page() {
       <section className="section-standard gap-[24px] md:gap-[48px]">
         <div className="flex flex-col gap-[16px] md:gap-[24px]">
           <div className="flex flex-col gap-[12px]">
-            <h5 className="text-primary-yellow"> Guiding Themes </h5>
+            <h5 className="text-primary-pink"> Guiding Themes </h5>
             <h1> UN Sustainable Development Goals </h1>
           </div>
           <h3>
@@ -184,7 +184,7 @@ function page() {
       <section className="section-standard gap-[24px] md:gap-[48px]">
         <div className="flex flex-col gap-[16px] md:gap-[24px]">
           <div className="flex flex-col gap-[12px]">
-            <h5 className="text-primary-yellow"> October 14–25 </h5>
+            <h5 className="text-primary-pink"> October 14–25 </h5>
             <h1> Program Timeline </h1>
           </div>
           <h3>
@@ -201,7 +201,7 @@ function page() {
       <section className="section-standard gap-[24px] md:gap-[48px]">
         <div className="flex flex-col gap-[16px] md:gap-[24px]">
           <div className="flex flex-col gap-[12px]">
-            <h5 className="text-primary-yellow">
+            <h5 className="text-primary-pink">
               October 25 · Harbour Centre
             </h5>
             <h1> Pitch Competition Format </h1>
