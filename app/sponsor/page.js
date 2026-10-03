@@ -224,7 +224,7 @@ function page() {
 
       <div className="flex flex-col gap-4 items-center text-center mx-auto lg:max-w-[60vw]">
         <h1>Interested in becoming a partner?</h1>
-        <h3 className="text-white">
+        <h3 className="text-primary-green">
           If you would like to partner with us, you can contact us here at the
           button below and one of our staff members will get back to you.
         </h3>

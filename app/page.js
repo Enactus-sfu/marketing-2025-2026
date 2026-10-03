@@ -121,7 +121,7 @@ function page() {
 
         {/* Absolutely positioned centered text with golden glow effect */}
         <div className="absolute inset-0 flex flex-col gap-[16px] lg:gap-[27px] items-center justify-center">
-          <h1 className="hero-text text-white text-center golden-glow uppercase flex flex-col gap-[8px] lg:gap-[16px]">
+          <h1 className="hero-text text-primary-green text-center golden-glow uppercase flex flex-col gap-[8px] lg:gap-[16px]">
             <span className="block">Growth</span>
             <span className="block">Innovation</span>
             <span className="block">Connection</span>

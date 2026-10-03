@@ -120,7 +120,7 @@ function page() {
                 height={1080}
                 className="w-[100%] h-auto"
               />
-              <h2 className="text-primary-red">
+              <h2 className="text-primary-green">
                 {" "}
                 1st Place — Entrepreneurship Challenge{" "}
               </h2>
@@ -138,7 +138,7 @@ function page() {
                 height={1080}
                 className="w-[100%] h-auto"
               />
-              <h2 className="text-primary-red">
+              <h2 className="text-primary-green">
                 {" "}
                 1st Place — Community Empowerment Challenge{" "}
               </h2>
@@ -159,7 +159,7 @@ function page() {
                 height={1080}
                 className="w-[100%] h-auto"
               />
-              <h2 className="text-primary-red">
+              <h2 className="text-primary-green">
                 {" "}
                 2nd Place — Environmental Sustainability Challenge{" "}
               </h2>
@@ -177,7 +177,7 @@ function page() {
                 height={1080}
                 className="w-[100%] h-auto"
               />
-              <h2 className="text-primary-red">
+              <h2 className="text-primary-green">
                 {" "}
                 2nd Place — Innovation &amp; Impact Challenge{" "}
               </h2>
@@ -222,7 +222,7 @@ function page() {
         </div>
 
         <div className="flex flex-col gap-[16px]">
-          <h2 className="text-primary-red"> Semifinalist </h2>
+          <h2 className="text-primary-green"> Semifinalist </h2>
           <div className="flex flex-col gap-[2px]">
             <h3>
               Presenters: Lauren Riestra, Cameron Miranda, Amber Holliday, Siya
