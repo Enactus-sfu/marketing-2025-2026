@@ -5,11 +5,17 @@
 @theme {
   --color-primary-red: #dc5939;
   --color-secondary-red: #c70d00;
-  --color-primary-gray: #282828;
+  /* Historical name: this is the shared card/footer surface. It now holds a
+     deeper pink so those surfaces stay distinct from the bright pink page. */
+  --color-primary-gray: #c2185b;
   --spacing-lg-gutter: 100px;
-  --color-primary-yellow: #ffc220;
-  --background: black;
-  --foreground: white;
+  /* Historical name: every use of this token is a text colour, so it now
+     carries the bright green rather than the old gold. */
+  --color-primary-yellow: #00ff00;
+  --color-primary-pink: #ff1493;
+  --color-primary-green: #00ff00;
+  --background: #ff1493;
+  --foreground: #00ff00;
   --font-family-sf: "SF Pro Display", sans-serif;
   --font-family-dm: "DM Sans", sans-serif;
 }
@@ -27,7 +33,7 @@
   h4,
   h5,
   h6 {
-    color: #ffffff;
+    color: #00ff00;
   }
 
   h1 {
@@ -68,8 +74,8 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: #0a0a0a;
-      --foreground: black;
+      --background: #ff1493;
+      --foreground: #00ff00;
     }
   }
 
@@ -105,7 +111,7 @@
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
-  color: #ffffff !important;
+  color: #00ff00 !important;
 }
 
 .gutter {

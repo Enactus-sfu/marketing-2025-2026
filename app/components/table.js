@@ -27,8 +27,8 @@ function Table({ columns, rows }) {
                     key={cellIndex}
                     className={`p-[16px] lg:p-[24px] text-[16px] leading-[1.5] ${
                       isFirst
-                        ? "font-[600] text-white whitespace-nowrap"
-                        : "text-white/60"
+                        ? "font-[600] text-primary-green whitespace-nowrap"
+                        : "text-primary-green/60"
                     } ${isLast ? "min-w-[320px] w-full" : "min-w-[200px]"}`}
                   >
                     {cell}

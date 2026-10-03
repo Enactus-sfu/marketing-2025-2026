@@ -26,7 +26,7 @@ function Navbar() {
     return (
         <div className='flex flex-col'>
             <div className=' h-[76px]'></div>
-            <div className="flex flex-row justify-between lg:items-center  fixed top-0 left-0 z-[100] items-start align-top w-[100%] bg-black text-white px-8 lg:py-[12px] py-[32px]  h-fit">
+            <div className="flex flex-row justify-between lg:items-center  fixed top-0 left-0 z-[100] items-start align-top w-[100%] bg-primary-pink text-primary-green px-8 lg:py-[12px] py-[32px]  h-fit">
                 <div
                     className={`flex lg:flex-row flex-col w-full transition-all
                 ${open === false ? "gap-[12px]" : "gap-[0px]"}`}
@@ -58,8 +58,8 @@ function Navbar() {
                                         href={item.link}
                                         aria-current={isActive ? "page" : undefined}
                                         className={`leading-none whitespace-nowrap transition-all text-[0.83rem] font-bold ${isActive
-                                            ? "text-[#ED8B6E]"
-                                            : "text-white opacity-60 hover:opacity-100"
+                                            ? "text-primary-green"
+                                            : "text-primary-green opacity-60 hover:opacity-100"
                                             }`}
                                     >
                                         {item.label}
