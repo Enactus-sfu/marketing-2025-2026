@@ -61,7 +61,8 @@ export async function POST(request) {
     if (!res.ok || !res.body) {
       const data = await res.json().catch(() => null);
       console.error("[forward-vision] bot error", res.status, data?.error);
-      return Response.json({ error: "The assistant couldn't answer right now. Please try again." }, { status: 502 });
+      // The status is enough to tell a missing FV_BOT_SECRET (401) from a bot failure (500) without exposing details.
+      return Response.json({ error: `The assistant couldn't answer right now (bot returned ${res.status}). Please try again.` }, { status: 502 });
     }
     // The bot streams the answer as one JSON event per line; hand it straight to the page so the
     // text appears as it's written. (An older bot build ignores `stream` and sends one JSON object;
