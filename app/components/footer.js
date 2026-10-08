@@ -62,7 +62,7 @@ function Footer() {
     ]
 
     return (
-        <footer className="bg-[#121212] h-fit lg:mt-0 mt-[24px]">
+        <footer className="bg-primary-gray h-fit lg:mt-0 mt-[24px]">
             <div className="gutter pt-16 pb-10 h-fit">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-8 md:items-start md:justify-between w-full">
 
@@ -76,11 +76,11 @@ function Footer() {
                                 height={64}
                                 className="w-[4vw] h-auto"
                             />
-                            <div className="text-[3vw] text-[#FFD156] font-bold leading-[1.1] tracking-[-0.025em] whitespace-nowrap">
+                            <div className="text-[3vw] text-primary-green font-bold leading-[1.1] tracking-[-0.025em] whitespace-nowrap">
                                 Enactus SFU
                             </div>
                         </div>
-                        <p className="max-w-[538px] text-[14px] leading-relaxed text-[#D4D4D4]">
+                        <p className="max-w-[538px] text-[14px] leading-relaxed text-primary-green">
                             Enactus is a social entrepreneurship organization that focuses on creating projects that impact with a
                             focus of sustainability, economic empowerment, and growth.
                         </p>
@@ -108,10 +108,10 @@ function Footer() {
                         </div>
 
                         <div className='flex flex-col h-fit'>
-                            <div className="text-[16px] font-medium tracking-[-0.015em] text-[#737373]">
+                            <div className="text-[16px] font-medium tracking-[-0.015em] text-primary-green/60">
                                 Copyright © Enactus {currentYear}. All rights reserved.
                             </div>
-                            <div className="flex items-center gap-4 text-[16px] font-medium tracking-[-0.015em] text-[#F5F5F5]">
+                            <div className="flex items-center gap-4 text-[16px] font-medium tracking-[-0.015em] text-primary-green">
                                 <a href="https://www.sfu.ca/communicators-toolkit/brand/guidelines/writing/editorial-style-guide/language-grammar/territorial-acknowledgements.html" target="_blank" rel="noopener noreferrer" className={linkClass}>Land Acknowledgment</a>
                             </div>
                         </div>
@@ -121,8 +121,8 @@ function Footer() {
                     <div className="grid grid-cols-2 gap-[12px] md:grid-cols-4 max-w-[100%] lg:max-w-[48%] w-full h-fit">
                         {columns.map((column) => (
                             <div key={column.title} className="space-y-4">
-                                <div className="text-[14px] font-semibold tracking-[-0.025em] text-[#FFC220]">{column.title}</div>
-                                <div className="space-y-4 text-[14px] text-[#D4D4D4] flex flex-col">
+                                <div className="text-[14px] font-semibold tracking-[-0.025em] text-primary-green">{column.title}</div>
+                                <div className="space-y-4 text-[14px] text-primary-green flex flex-col">
                                     {column.items.map((item) => (
                                         item.external ? (
                                             <a key={item.name} href={item.link} target="_blank" rel="noopener noreferrer" className={linkClass}>
