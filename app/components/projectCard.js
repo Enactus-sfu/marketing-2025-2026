@@ -16,7 +16,7 @@ function projectCard({ img, header, body }) {
         <h2 className="text-primary-yellow mb-3 mt-[16px] lg:mt-0">
           {header ?? "Project Title"}
         </h2>
-        <h3 className="text-center opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-[300ms] ease-in-out">
+        <h3 className="text-center text-white opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-[300ms] ease-in-out">
           {body ?? "Body text goes here."}
         </h3>
       </div>

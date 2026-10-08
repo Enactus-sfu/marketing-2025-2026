@@ -50,12 +50,12 @@ function imglabel({
           <div className="flex flex-row gap-[24px]">
             {instagram && (
               <a href={instagram} target="_blank" rel="noopener noreferrer" aria-label={`${header} on Instagram`}>
-                <FaInstagram size={35} className="text-white" />
+                <FaInstagram size={35} className="text-black" />
               </a>
             )}
             {linkedin && (
               <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${header} on LinkedIn`}>
-                <FaLinkedin size={35} className="text-white" />
+                <FaLinkedin size={35} className="text-black" />
               </a>
             )}
           </div>

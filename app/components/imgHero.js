@@ -19,7 +19,7 @@ function imgHero({ img, header, subheader, cta1, cta2 }) {
 
         {/* Absolutely positioned centered text with golden glow effect */}
         <div className="absolute inset-0 flex items-center flex-col justify-center gutter gap-[24px] h-full">
-          <h1 className="w-full text-left">{header}</h1>
+          <h1 className="w-full text-left text-white">{header}</h1>
           <h2 className="text-primary-yellow text-left w-full">{subheader}</h2>
           {cta1 && (
             cta2 == null ? (
