@@ -5,6 +5,8 @@
 @theme {
   --color-primary-red: #dc5939;
   --color-secondary-red: #c70d00;
+  --color-primary-blue: #51a2ff;
+  --color-secondary-blue: #1e6fd9;
   --color-primary-gray: #282828;
   --spacing-lg-gutter: 100px;
   --color-primary-yellow: #ffc220;
