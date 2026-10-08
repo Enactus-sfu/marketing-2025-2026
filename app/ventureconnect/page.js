@@ -25,7 +25,7 @@ function page() {
 
       <div className="section-standard gap-[16px] md:gap-[24px]">
         <h2> More about Venture Connect </h2>
-        <h3 className="text-primary-yellow">
+        <h3 className="text-primary-pink">
           Discover our educational workshops hosted by Enactus SFU, connect with
           like-minded individuals, and learn about sustainable social
           entrepreneurship.

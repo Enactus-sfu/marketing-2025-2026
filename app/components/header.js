@@ -10,7 +10,7 @@ function header({ header, body, center = false }) {
       }`}
     >
       <h1>{header}</h1>
-      {body && <h2 className="text-primary-yellow">{body}</h2>}
+      {body && <h2 className="text-primary-pink">{body}</h2>}
     </div>
   );
 }

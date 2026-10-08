@@ -8,8 +8,9 @@
   --color-primary-gray: #282828;
   --spacing-lg-gutter: 100px;
   --color-primary-yellow: #ffc220;
+  --color-primary-pink: #ff69b4;
   --background: black;
-  --foreground: white;
+  --foreground: var(--color-primary-pink);
   --font-family-sf: "SF Pro Display", sans-serif;
   --font-family-dm: "DM Sans", sans-serif;
 }
@@ -27,7 +28,7 @@
   h4,
   h5,
   h6 {
-    color: #ffffff;
+    color: var(--color-primary-pink);
   }
 
   h1 {
@@ -69,7 +70,7 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --background: #0a0a0a;
-      --foreground: black;
+      --foreground: var(--color-primary-pink);
     }
   }
 
@@ -105,7 +106,7 @@
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
-  color: #ffffff !important;
+  color: var(--color-primary-pink) !important;
 }
 
 .gutter {
