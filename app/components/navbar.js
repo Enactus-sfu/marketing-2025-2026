@@ -66,6 +66,16 @@ function Navbar() {
                                     </Link>
                                 );
                             })}
+                            <Link
+                                href="/forward-vision"
+                                aria-current={pathname === "/forward-vision" ? "page" : undefined}
+                                className={`leading-none whitespace-nowrap text-[0.83rem] font-bold rounded-full border px-[12px] py-[7px] transition-colors ${pathname === "/forward-vision"
+                                    ? "border-[#ED8B6E] text-[#ED8B6E]"
+                                    : "border-white/30 text-white hover:border-[#ED8B6E] hover:text-[#ED8B6E]"
+                                    }`}
+                            >
+                                Ask Forward Vision
+                            </Link>
                         </nav>
                     </div>
                 </div>

@@ -8,6 +8,7 @@ const routes = [
   { path: "/competition", priority: 0.7 },
   { path: "/events", priority: 0.7 },
   { path: "/forwardVision", priority: 0.6 },
+  { path: "/forward-vision", priority: 0.5 },
   { path: "/ventureconnect", priority: 0.6 },
   { path: "/sponsor", priority: 0.6 },
 ];
