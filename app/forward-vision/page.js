@@ -7,24 +7,13 @@ export const metadata = {
     "Ask the Forward Vision assistant about the program schedule, your team's stream, the pitch format, or your sustainability idea.",
 };
 
+// Full-screen chat: the navbar stays compact on this route and the footer is hidden
+// (see components/navbar.js and components/footer.js). 84px is the compact navbar's height.
 function page() {
   return (
-    <div className="flex flex-col mt-[16px] md:mt-0 gap-[24px] md:gap-[48px] pb-[48px]">
-      <div className="section-standard gap-[16px] md:gap-[24px] md:pt-[48px]">
-        <div className="flex flex-col gap-[12px]">
-          <h5 className="text-primary-yellow">Forward Vision · October 14–25</h5>
-          <h1>Ask the Forward Vision Assistant</h1>
-        </div>
-        <h3 className="opacity-60">
-          Questions about the schedule, your stream, the pitch format, or the idea your team is working on?
-          Ask here and get an answer straight away.
-        </h3>
-      </div>
-
-      <section className="section-standard">
-        <Chat />
-      </section>
-    </div>
+    <main className="flex h-[calc(100dvh-84px)] w-full">
+      <Chat />
+    </main>
   );
 }
 

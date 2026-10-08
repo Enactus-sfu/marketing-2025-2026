@@ -22,13 +22,18 @@ function Navbar() {
 
     const [open, setOpen] = useState(true);
     const pathname = usePathname();
+    // The Forward Vision assistant is a full-screen chat, so it keeps the compact (mobile)
+    // navbar at every width: desktop-only `lg:` classes are dropped on that page.
+    const compact = pathname === "/forward-vision";
+    const lg = (classes) => (compact ? "" : classes);
 
     return (
         <div className='flex flex-col'>
-            <div className=' h-[76px]'></div>
-            <div className="flex flex-row justify-between lg:items-center  fixed top-0 left-0 z-[100] items-start align-top w-[100%] bg-black text-white px-8 lg:py-[12px] py-[32px]  h-fit">
+            {/* Spacer under the fixed bar; the compact bar is 84px tall. */}
+            <div className={compact ? "h-[84px]" : "h-[76px]"}></div>
+            <div className={`flex flex-row justify-between ${lg("lg:items-center lg:py-[12px]")} fixed top-0 left-0 z-[100] items-start align-top w-[100%] bg-black text-white px-8 py-[32px] h-fit`}>
                 <div
-                    className={`flex lg:flex-row flex-col w-full transition-all
+                    className={`flex ${lg("lg:flex-row")} flex-col w-full transition-all
                 ${open === false ? "gap-[12px]" : "gap-[0px]"}`}
                 >
                     <div className="w-full">
@@ -43,13 +48,13 @@ function Navbar() {
                         </Link>
                     </div>
                     <div
-                        className={`w-full flex  lg:justify-center transition-all ease-in-out duration-[300ms]
+                        className={`w-full flex ${lg("lg:justify-center")} transition-all ease-in-out duration-[300ms]
                     ${open === true
-                                ? "lg:h-full lg:max-h-full lg:opacity-[100%] max-h-[0] opacity-0"
+                                ? `${lg("lg:h-full lg:max-h-full lg:opacity-[100%]")} max-h-[0] opacity-0 pointer-events-none ${lg("lg:pointer-events-auto")}`
                                 : "max-h-[40vh] opacity-[100%]"
                             }`}
                     >
-                        <nav className="flex items-start lg:flex-row flex-col lg:items-center gap-6">
+                        <nav className={`flex items-start ${lg("lg:flex-row lg:items-center")} flex-col gap-6`}>
                             {navItems.map((item) => {
                                 const isActive = pathname === item.link;
                                 return (
@@ -80,7 +85,7 @@ function Navbar() {
                     </div>
                 </div>
                 <div className="justify-end flex-row  h-fit w-[45%]">
-                    <div className="hidden w-full lg:flex flex-row justify-end">
+                    <div className={`hidden w-full ${lg("lg:flex")} flex-row justify-end`}>
                         <Button
                             size="small"
                             variant="icon"
@@ -93,7 +98,7 @@ function Navbar() {
                             </div>
                         </Button>
                     </div>
-                    <div className="lg:hidden flex flex-row justify-end">
+                    <div className={`${lg("lg:hidden")} flex flex-row justify-end`}>
                         <button onClick={() => setOpen(!open)}>
                             <MdDensitySmall className="text-xl" />
                         </button>

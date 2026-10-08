@@ -55,22 +55,24 @@ export async function POST(request) {
         "Content-Type": "application/json",
         ...(BOT_SECRET ? { Authorization: `Bearer ${BOT_SECRET}` } : {}),
       },
-      body: JSON.stringify({ question, history, format: "markdown" }),
+      body: JSON.stringify({ question, history, format: "markdown", stream: true }),
       signal: AbortSignal.timeout(58_000),
     });
-    const data = await res.json().catch(() => null);
-    if (!res.ok || typeof data?.answer !== "string") {
+    if (!res.ok || !res.body) {
+      const data = await res.json().catch(() => null);
       console.error("[forward-vision] bot error", res.status, data?.error);
       return Response.json({ error: "The assistant couldn't answer right now. Please try again." }, { status: 502 });
     }
-    const sources = Array.isArray(data.sources)
-      ? data.sources
-          .filter((s) => s?.kind === "web" && typeof s.url === "string" && /^https?:\/\//.test(s.url))
-          .map((s) => ({ title: String(s.title || s.url), url: s.url }))
-      : [];
-    // The bot cites knowledge-base passages as [K1]; those ids mean nothing to site visitors.
-    const answer = data.answer.replace(/\s?(\[K\d+\])+/g, "");
-    return Response.json({ answer, sources });
+    // The bot streams the answer as one JSON event per line; hand it straight to the page so the
+    // text appears as it's written. (An older bot build ignores `stream` and sends one JSON object;
+    // chat.js accepts both.) The page also drops the bot's [K1] citation ids and non-web sources.
+    return new Response(res.body, {
+      headers: {
+        "Content-Type": res.headers.get("content-type") || "application/json",
+        "Cache-Control": "no-cache, no-transform",
+        "X-Accel-Buffering": "no",
+      },
+    });
   } catch (err) {
     console.error("[forward-vision] request failed", err);
     return Response.json({ error: "The assistant took too long to respond. Please try again." }, { status: 504 });

@@ -186,3 +186,20 @@
     padding-right: 100px;
   }
 }
+
+/* Forward Vision chat (app/forward-vision/chat.js): status line while the assistant is writing. */
+@keyframes fv-shimmer {
+  from { background-position: 200% center; }
+  to { background-position: -200% center; }
+}
+.fv-shimmer {
+  background: linear-gradient(90deg, currentColor 25%, #fff 50%, currentColor 75%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fv-shimmer 1.8s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .fv-shimmer { animation: none; background: none; -webkit-text-fill-color: currentColor; }
+}

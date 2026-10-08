@@ -96,8 +96,73 @@ function Markdown({ text }) {
   return <div className="flex flex-col gap-[10px]">{blocks}</div>;
 }
 
+// The bot cites knowledge-base passages as [K1]; those ids mean nothing to site visitors.
+// While the answer is still streaming, a citation can be cut off mid-way, so a dangling "[K" goes too.
+function stripCitations(text, { partial = false } = {}) {
+  const clean = text.replace(/\s?(\[K\d+\])+/g, "");
+  return partial ? clean.replace(/\s?\[K?\d*$/, "") : clean;
+}
+
+const BOT_FAILED = "The assistant couldn't answer right now. Please try again.";
+
+// Reads the bot's reply as it streams in: one JSON event per line (status, delta, reset, done, error).
+// `onProgress(text, status)` fires as the answer grows; resolves with the finished answer and its sources.
+// An older bot build sends a single JSON object instead of events; that is accepted too.
+async function readAnswer(body, onProgress) {
+  const reader = body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+  let content = "";
+  let final = null;
+  const handle = (line) => {
+    if (!line.trim()) return;
+    let event;
+    try {
+      event = JSON.parse(line);
+    } catch {
+      throw new Error(BOT_FAILED);
+    }
+    if (event.type === "status") {
+      onProgress(content, event.status);
+    } else if (event.type === "delta") {
+      content += event.text;
+      onProgress(content, "");
+    } else if (event.type === "reset") {
+      content = "";
+      onProgress(content, "");
+    } else if (event.type === "error") {
+      throw new Error(BOT_FAILED);
+    } else if (typeof event.answer === "string") {
+      final = event;
+    }
+  };
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split("\n");
+    buffer = lines.pop();
+    lines.forEach(handle);
+  }
+  handle(buffer);
+  if (!final) throw new Error(BOT_FAILED);
+  // Event documents first, then web pages; titles trimmed like "(stream brief)". At most 4.
+  const seen = new Set();
+  const sources = [];
+  for (const src of Array.isArray(final.sources) ? final.sources : []) {
+    const title = String(src?.title || src?.url || "").replace(/\s*\(.*?\)\s*$/, "").trim();
+    const url = typeof src?.url === "string" && /^https?:\/\//.test(src.url) ? src.url : null;
+    if (!title || seen.has(title)) continue;
+    seen.add(title);
+    sources.push({ title, url });
+  }
+  return { answer: stripCitations(final.answer), sources: sources.slice(0, 4) };
+}
+
 export default function Chat() {
   const [messages, setMessages] = useState([]);
+  // The reply being written right now: text so far, plus what the bot is doing before any text arrives.
+  const [live, setLive] = useState(null);
   const [input, setInput] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(null);
@@ -107,7 +172,7 @@ export default function Chat() {
   useEffect(() => {
     const log = logRef.current;
     if (log) log.scrollTo({ top: log.scrollHeight, behavior: "smooth" });
-  }, [messages, pending, error]);
+  }, [messages, live, error]);
 
   async function send(question) {
     question = question.trim();
@@ -117,15 +182,19 @@ export default function Chat() {
     setInput("");
     setPending(true);
     setError(null);
+    setLive({ content: "", status: "Thinking…" });
     try {
       const res = await fetch("/api/forward-vision", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question, history }),
       });
-      const data = await res.json().catch(() => null);
-      if (!res.ok || !data?.answer) throw new Error(data?.error || "Something went wrong. Please try again.");
-      setMessages((m) => [...m, { role: "assistant", content: data.answer, sources: data.sources }]);
+      if (!res.ok || !res.body) {
+        const data = await res.json().catch(() => null);
+        throw new Error(data?.error || "Something went wrong. Please try again.");
+      }
+      const { answer, sources } = await readAnswer(res.body, (content, status) => setLive({ content, status }));
+      setMessages((m) => [...m, { role: "assistant", content: answer, sources }]);
     } catch (err) {
       // Drop the unanswered question and put it back in the box so it can be resent.
       setMessages((m) => m.slice(0, -1));
@@ -133,6 +202,7 @@ export default function Chat() {
       setError(err.message);
     } finally {
       setPending(false);
+      setLive(null);
       inputRef.current?.focus();
     }
   }
@@ -147,15 +217,13 @@ export default function Chat() {
   const empty = messages.length === 0;
 
   return (
-    <div className="flex flex-col w-full max-w-[880px] mx-auto rounded-[16px] bg-primary-gray/60 border border-white/10 overflow-hidden">
-      <div
-        ref={logRef}
-        className="flex flex-col gap-[16px] h-[60vh] min-h-[360px] overflow-y-auto p-[16px] md:p-[24px]"
-        aria-live="polite"
-      >
+    <div className="flex flex-col w-full h-full">
+      <div ref={logRef} className="flex-1 overflow-y-auto" aria-live="polite">
+        <div className="flex flex-col gap-[16px] w-full max-w-[880px] min-h-full mx-auto p-[16px] md:p-[24px]">
         {empty && (
-          <div className="flex flex-col gap-[16px] m-auto items-center text-center max-w-[520px]">
-            <p className="text-white/60">Try one of these, or ask your own question.</p>
+          <div className="flex flex-col gap-[16px] m-auto items-center text-center max-w-[560px]">
+            <h1 className="text-[28px] md:text-[36px] leading-tight">Ask the Forward Vision Assistant</h1>
+            <p className="text-white/60">Questions about your stream, the event, or your team&apos;s idea. Try one of these, or ask your own.</p>
             <div className="flex flex-wrap justify-center gap-[8px]">
               {SUGGESTIONS.map((s) => (
                 <button
@@ -182,29 +250,34 @@ export default function Chat() {
                 <Markdown text={m.content} />
               </div>
               {m.sources?.length > 0 && (
-                <div className="flex flex-wrap gap-[6px] pl-[4px]">
+                <p className="pl-[4px] text-[13px] italic text-white/50">
+                  Sources:{" "}
                   {m.sources.map((s, j) => (
-                    <a
-                      key={j}
-                      href={s.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="max-w-[260px] truncate rounded-full bg-white/[0.06] px-[10px] py-[4px] text-[12px] text-white/60 hover:text-white"
-                    >
-                      {s.title}
-                    </a>
+                    <React.Fragment key={j}>
+                      {j > 0 && " · "}
+                      {s.url ? (
+                        <a href={s.url} target="_blank" rel="noopener noreferrer" className="underline hover:text-white">
+                          {s.title}
+                        </a>
+                      ) : (
+                        s.title
+                      )}
+                    </React.Fragment>
                   ))}
-                </div>
+                </p>
               )}
             </div>
           ),
         )}
 
-        {pending && (
-          <div className="self-start flex items-center gap-[6px] rounded-[16px] rounded-bl-[4px] bg-white/[0.06] px-[16px] py-[14px]" aria-label="Assistant is typing">
-            {[0, 150, 300].map((d) => (
-              <span key={d} className="h-[6px] w-[6px] rounded-full bg-white/60 animate-bounce" style={{ animationDelay: `${d}ms` }} />
-            ))}
+        {live && (
+          <div className="self-start max-w-[90%] flex flex-col gap-[8px]">
+            {live.content && (
+              <div className="rounded-[16px] rounded-bl-[4px] bg-white/[0.06] px-[16px] py-[12px] text-white/90 break-words" aria-hidden="true">
+                <Markdown text={stripCitations(live.content, { partial: true })} />
+              </div>
+            )}
+            <p className="fv-shimmer pl-[4px] text-[14px] text-white/70">{live.status || "Writing…"}</p>
           </div>
         )}
 
@@ -213,6 +286,7 @@ export default function Chat() {
             {error}
           </div>
         )}
+        </div>
       </div>
 
       <form
@@ -220,7 +294,7 @@ export default function Chat() {
           e.preventDefault();
           send(input);
         }}
-        className="flex items-end gap-[8px] border-t border-white/10 p-[12px] md:p-[16px]"
+        className="flex items-end gap-[8px] w-[calc(100%-32px)] max-w-[880px] mx-auto mt-[8px] rounded-[16px] border border-white/15 bg-primary-gray/60 p-[8px] md:p-[10px]"
       >
         <label htmlFor="fv-question" className="sr-only">
           Your question
@@ -245,7 +319,7 @@ export default function Chat() {
           <MdArrowUpward className="text-[22px]" />
         </button>
       </form>
-      <p className="px-[16px] pb-[12px] text-[12px] text-white/40">
+      <p className="w-full max-w-[880px] mx-auto px-[16px] pt-[8px] pb-[12px] text-center text-[12px] text-white/40">
         AI-generated answers can be wrong. For anything official, check with the Forward Vision team.
       </p>
     </div>

@@ -6,12 +6,14 @@ import { mdiInstagram, mdiLinkedin, mdiEmailOutline } from '@mdi/js'
 import Button from "../components/button"
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 
 const CONTACT_EMAIL = 'info@enactussfu.ca'
 
 const linkClass = "transition ease-in-out duration-100 hover:underline hover:cursor-pointer"
 
 function Footer() {
+    const pathname = usePathname()
     const currentYear = new Date().getFullYear()
 
     const handleCopyEmail = async () => {
@@ -60,6 +62,9 @@ function Footer() {
             ],
         },
     ]
+
+    // The Forward Vision assistant is a full-screen chat.
+    if (pathname === "/forward-vision") return null
 
     return (
         <footer className="bg-[#121212] h-fit lg:mt-0 mt-[24px]">
