@@ -8,7 +8,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
-const CONTACT_EMAIL = 'info@enactussfu.ca'
+const CONTACT_EMAIL = 'info@enactussfu.com'
 
 const linkClass = "transition ease-in-out duration-100 hover:underline hover:cursor-pointer"
 
